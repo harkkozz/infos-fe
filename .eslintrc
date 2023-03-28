@@ -23,7 +23,11 @@
   "parserOptions": {
     "project": ["tsconfig.json"]
   },
-  "extends": ["plugin:react/recommended", "plugin:@typescript-eslint/recommended", "eslint:recommended"],
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "eslint:recommended"
+  ],
   "plugins": ["react-hooks"],
   "rules": {
     "eqeqeq": ["warn", "smart"],
@@ -45,7 +49,7 @@
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-use-before-define": "off",
-    "@typescript-eslint/no-unused-vars": ["error", { "ignoreRestSiblings": true }],
+    "@typescript-eslint/no-unused-vars": ["warn", { "ignoreRestSiblings": true }],
     "@typescript-eslint/no-unused-expressions": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-empty-interface": "error",

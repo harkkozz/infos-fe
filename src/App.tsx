@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { createClient } from 'apollo/client';
+import { ApolloProvider } from '@apollo/client';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -7,10 +9,7 @@ import MainRouter from 'router/MainRouter';
 
 import store from 'store/store';
 
-import { createClient } from 'apollo/client';
-import { ApolloProvider } from '@apollo/client';
-
-const App = () => {
+const App: React.FC = () => {
   const client = createClient();
 
   return (
