@@ -35,7 +35,7 @@
     "no-unneeded-ternary": "warn",
     "array-callback-return": "warn",
     "require-await": "warn",
-    "no-console": "warn",
+    "no-console": ["error", { "allow": ["warn", "error"] }],
     "complexity": ["warn", 15],
     "no-duplicate-imports": 0,
     "react/prop-types": 0,
