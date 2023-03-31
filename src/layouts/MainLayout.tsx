@@ -1,8 +1,11 @@
 import React from 'react';
-import styles from './MainLayout.module.scss';
+
 import { Layout, theme } from 'antd';
-import Header from 'components/Header/Header';
+
 import Footer from 'components/Footer/Footer';
+import Header from 'components/Header/Header';
+
+import styles from './MainLayout.module.scss';
 
 const { Content } = Layout;
 

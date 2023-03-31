@@ -1,7 +1,9 @@
 import React from 'react';
-import { Layout, Button } from 'antd';
-import styles from './Header.module.scss';
+
+import { Button, Layout } from 'antd';
 import { ReactComponent as Logo } from 'icons/vite.svg';
+
+import styles from './Header.module.scss';
 
 const Header: React.FC = () => {
   return (

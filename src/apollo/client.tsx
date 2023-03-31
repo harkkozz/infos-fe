@@ -1,4 +1,4 @@
-import { ApolloClient, InMemoryCache, NormalizedCacheObject, from, HttpLink } from '@apollo/client';
+import { ApolloClient, from, HttpLink, InMemoryCache, NormalizedCacheObject } from '@apollo/client';
 
 export const createClient = () => {
   const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({

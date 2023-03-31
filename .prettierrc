@@ -1,12 +1,23 @@
 {
-  "printWidth": 100,
-  "tabWidth": 2,
-  "useTabs": false,
+  "endOfLine": "auto",
   "semi": true,
-  "singleQuote": true,
-  "trailingComma": "none",
   "bracketSpacing": true,
-  "bracketSameLine": false,
-  "arrowParens": "avoid",
-  "endOfLine": "lf"
+  "trailingComma": "none",
+  "singleQuote": true,
+  "printWidth": 120,
+  "tabWidth": 2,
+  "importOrder": [
+    "^react$",
+    "<THIRD_PARTY_MODULES>",
+    "^config/(.*)$",
+    "^router/(.*)$",
+    "^store/(.*)$",
+    "^pages/(.*)$",
+    "^components/(.*)$",
+    "^[./]"
+  ],
+  "importOrderCaseInsensitive": true,
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "plugins": ["@trivago/prettier-plugin-sort-imports"]
 }

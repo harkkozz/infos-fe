@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { createClient } from 'apollo/client';
 import { ApolloProvider } from '@apollo/client';
+import { createClient } from 'apollo/client';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 

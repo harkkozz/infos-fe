@@ -1,20 +1,19 @@
-import { useLazyQuery } from '@apollo/client';
-import MainLayout from 'layouts/MainLayout';
 import React, { useCallback, useMemo } from 'react';
+
+import { useLazyQuery } from '@apollo/client';
 import { Get_Company_By_Name_State_City } from 'apollo/queries/company/getCompany';
-import ErrorBoundary from 'components/ErrorBoundary';
-import { Companies } from 'types/company/types';
-import AsyncTypeahead, { TypeaheadOption } from 'components/AsyncTypeahead/AsyncTypeahead';
+import MainLayout from 'layouts/MainLayout';
 import { useNavigate } from 'react-router-dom';
+import { Companies } from 'types/company/types';
+
+import AsyncTypeahead, { TypeaheadOption } from 'components/AsyncTypeahead/AsyncTypeahead';
+import ErrorBoundary from 'components/ErrorBoundary';
 
 const HomePage: React.FC<React.PropsWithChildren> = () => {
   const navigate = useNavigate();
-  const [getCompany, { data, error, loading }] = useLazyQuery<Companies>(
-    Get_Company_By_Name_State_City,
-    {
-      fetchPolicy: 'cache-and-network'
-    }
-  );
+  const [getCompany, { data, error, loading }] = useLazyQuery<Companies>(Get_Company_By_Name_State_City, {
+    fetchPolicy: 'cache-and-network'
+  });
 
   const handleSearch = useCallback(
     (query: string) => {
@@ -33,7 +32,7 @@ const HomePage: React.FC<React.PropsWithChildren> = () => {
   const options = useMemo(
     () =>
       data?.getCompanyBy
-        ? data.getCompanyBy?.map(result => ({
+        ? data.getCompanyBy?.map((result) => ({
             value: result.id,
             label: result.companyName
           }))
