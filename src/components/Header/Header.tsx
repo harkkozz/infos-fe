@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Button, Layout } from 'antd';
-import { ReactComponent as Logo } from 'icons/vite.svg';
+import { ReactComponent as Logo } from 'assets/icons/vite.svg';
 
 import styles from './Header.module.scss';
 

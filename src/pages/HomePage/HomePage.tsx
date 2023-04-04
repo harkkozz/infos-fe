@@ -7,7 +7,26 @@ import { useNavigate } from 'react-router-dom';
 import { Companies } from 'types/company/types';
 
 import AsyncTypeahead, { TypeaheadOption } from 'components/AsyncTypeahead/AsyncTypeahead';
+import CustomForm from 'components/CustomForm/CustomForm';
 import ErrorBoundary from 'components/ErrorBoundary';
+
+import styles from './HomePage.module.scss';
+
+const inputConfig = [
+  {
+    type: 'default',
+    name: 'email',
+    label: 'Email',
+    placeholder: 'Insert your email',
+    class: styles.inputClass
+  },
+  {
+    name: 'password',
+    placeholder: 'Insert your password',
+    label: 'Password',
+    type: 'password'
+  }
+];
 
 const HomePage: React.FC<React.PropsWithChildren> = () => {
   const navigate = useNavigate();
@@ -52,6 +71,13 @@ const HomePage: React.FC<React.PropsWithChildren> = () => {
         placeholder="Search for a company"
         onInputChange={handleSearch}
         onChange={handleSelect}
+      />
+
+      <CustomForm
+        formType="login"
+        buttonText="Submit"
+        inputConfig={inputConfig}
+        onFormSubmit={(values) => console.warn(values)}
       />
     </MainLayout>
   );
