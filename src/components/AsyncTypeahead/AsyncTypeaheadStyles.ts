@@ -53,11 +53,10 @@ export const typeaheadStyles = {
   }),
   menu: (provided: any) => ({
     ...provided,
-    border: '1px solid #94999e',
-    borderTop: '4px solid #0077be',
+    borderTop: '3px solid #0077be',
     borderRadius: '0',
-    padding: '16px 0',
-    width: 'auto',
+    padding: '20px 0',
+    width: '100%',
     boxShadow: '0 2px 6px 0 rgba(0, 0, 0, 0.08)'
   }),
   menuList: (provided: any) => ({

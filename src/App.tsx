@@ -2,23 +2,23 @@ import React from 'react';
 
 import { ApolloProvider } from '@apollo/client';
 import { createClient } from 'apollo/client';
-import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
+import { BASENAME } from 'router/constants';
 import MainRouter from 'router/MainRouter';
 
-import store from 'store/store';
+import { useModalStore } from 'store/modal';
+
+import CustomModal from 'components/CustomModal/CustomModal';
 
 const App: React.FC = () => {
   const client = createClient();
 
   return (
     <ApolloProvider client={client}>
-      <Provider store={store}>
-        <BrowserRouter>
-          <MainRouter />
-        </BrowserRouter>
-      </Provider>
+      <BrowserRouter basename={BASENAME}>
+        <MainRouter />
+      </BrowserRouter>
     </ApolloProvider>
   );
 };

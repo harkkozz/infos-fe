@@ -1,9 +1,16 @@
-.inputClass {
-  input {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+@import '../../styles/mixins.scss';
 
-    &:focus {
-      outline: none;
-    }
+.asyncTypeaheadWrapper {
+  display: flex;
+  justify-content: center;
+  padding: 150px 0;
+}
+
+.selectContainer {
+  @include fontRegular16;
+  min-width: 100%;
+
+  @media (min-width: 1024px) {
+    min-width: 500px;
   }
 }

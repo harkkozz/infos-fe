@@ -5,7 +5,11 @@ import { ReactComponent as Logo } from 'assets/icons/vite.svg';
 
 import styles from './Header.module.scss';
 
-const Header: React.FC = () => {
+interface IProps {
+  handleOnLoginClick: () => void;
+}
+
+const Header: React.FC<IProps> = ({ handleOnLoginClick }) => {
   return (
     <Layout.Header className={styles.header}>
       <div className={styles.headerContent}>
@@ -13,7 +17,7 @@ const Header: React.FC = () => {
           <Logo /> Infos
         </div>
         <div className={styles.headerContentActions}>
-          <Button>Login</Button>
+          <Button onClick={handleOnLoginClick}>Login</Button>
           <Button>Sign up</Button>
         </div>
       </div>

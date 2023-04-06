@@ -23,11 +23,7 @@
   "parserOptions": {
     "project": ["tsconfig.json"]
   },
-  "extends": [
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "eslint:recommended"
-  ],
+  "extends": ["plugin:react/recommended", "plugin:@typescript-eslint/recommended", "eslint:recommended"],
   "plugins": ["react-hooks"],
   "rules": {
     "eqeqeq": ["warn", "smart"],
@@ -35,7 +31,7 @@
     "no-unneeded-ternary": "warn",
     "array-callback-return": "warn",
     "require-await": "warn",
-    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "no-console": "warn",
     "complexity": ["warn", 15],
     "no-duplicate-imports": 0,
     "react/prop-types": 0,

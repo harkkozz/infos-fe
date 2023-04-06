@@ -1,3 +1,20 @@
 .footer {
   padding: 1rem;
+  font-family: Roboto-Medium;
+  font-size: 1rem;
+}
+
+.footerImagesContainer {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 1024px) {
+    padding: 50px;
+    flex-direction: row;
+  }
+}
+
+.buildings {
+  height: 250px;
+  width: 100%;
 }
