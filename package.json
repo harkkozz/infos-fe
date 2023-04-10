@@ -1,5 +1,5 @@
 {
-  "name": "react-ts-vite-pnpm",
+  "name": "infos-fe",
   "private": true,
   "version": "0.0.0",
   "engines": {
@@ -15,38 +15,41 @@
     "lint:staged": "lint-staged"
   },
   "dependencies": {
-    "@apollo/client": "^3.7.10",
-    "antd": "^5.3.2",
+    "@apollo/client": "^3.7.11",
+    "antd": "^5.4.0",
     "graphql": "^16.6.0",
+    "i18next": "^22.4.14",
+    "i18next-browser-languagedetector": "^7.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router": "^6.8.2",
-    "react-router-dom": "^6.8.2",
+    "react-i18next": "^12.2.0",
+    "react-router": "^6.10.0",
+    "react-router-dom": "^6.10.0",
     "react-select": "^5.7.2",
-    "sass": "^1.58.3",
+    "sass": "^1.61.0",
     "scss": "^0.2.4",
     "vite-plugin-svgr": "^2.4.0",
     "zustand": "^4.3.7"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.1.1",
-    "@types/react": "^18.0.28",
+    "@types/react": "^18.0.33",
     "@types/react-dom": "^18.0.11",
-    "@typescript-eslint/eslint-plugin": "^5.54.0",
-    "@typescript-eslint/parser": "^5.54.0",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
     "@vitejs/plugin-react": "^3.1.0",
-    "eslint": "^8.35.0",
+    "eslint": "^8.37.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-expressions": "^1.3.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.0",
-    "prettier": "^2.8.4",
-    "typescript": "^4.9.5",
-    "vite": "^4.1.4",
+    "lint-staged": "^13.2.1",
+    "prettier": "^2.8.7",
+    "typescript": "^5.0.3",
+    "vite": "^4.2.1",
     "vite-plugin-eslint": "^1.8.1",
-    "vite-tsconfig-paths": "^4.0.5"
+    "vite-tsconfig-paths": "^4.0.8"
   },
   "pnpm": {
     "peerDependencyRules": {

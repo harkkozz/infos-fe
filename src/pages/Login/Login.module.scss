@@ -1,0 +1,30 @@
+.login {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: space-evenly;
+  width: 100vw;
+}
+
+.loginIcon {
+  max-width: 100%;
+}
+
+.formWrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
+}
+
+.formClass {
+  min-width: 100%;
+  @media (min-width: 1024px) {
+    min-width: 600px;
+  }
+}

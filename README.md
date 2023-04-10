@@ -1,39 +1,38 @@
-# react-ts-vite-pnpm
+# Infos FE
 
-# React - Typescript - Vite - PNPM
+## Description
 
-This project was created with [Vite](https://vitejs.dev/guide/) and using [PNPM](https://pnpm.io/) as package manager.
+This is the front-end for Infos, a platform where you can register and create some desired company information so anyone can look at it easily. You can find a company without any registration and see contact info, but you can't edit, delete, or create a company. You can edit and delete a company only if you're the author of that company. If you are authorized, you can create companies.
 
-## Install PNPM globally in terms of using it to manage packages and run the scripts
+## Technologies
 
-### `npm i -g pnpm`
+React with TypeScript
+Ant Design for UI components
+Zustand for state management
+GraphQL with Apollo Client for data fetching
+React Router for routing
+i18next for internationalization
+SCSS for styling
+
+## Getting Started
+
+Clone the repository and navigate to the project directory
+Install dependencies using your preferred package manager (e.g. npm install or pnpm install)
+Start the development server with npm run start
+Open http://localhost:3000 in your browser
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `pnpm start`
+npm run start: Starts the development server
+npm run build: Builds the app for production
+npm run preview: Serves the production build locally for previewing
+npm run format: Formats the code using Prettier
+npm run lint: Lints the code using ESLint
+npm run lint:tsc: Checks for type errors using TypeScript
+npm run lint:staged: Runs Prettier and ESLint on staged files using lint-staged
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## License
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `pnpm build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `pnpm format`
-
-Format files using Prettier.
-
-### `pnpm lint`
-
-Runs eslint from local configuration which will check potentional warnings/errors
+This project is licensed under the MIT License.

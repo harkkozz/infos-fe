@@ -7,10 +7,6 @@ import { BrowserRouter } from 'react-router-dom';
 import { BASENAME } from 'router/constants';
 import MainRouter from 'router/MainRouter';
 
-import { useModalStore } from 'store/modal';
-
-import CustomModal from 'components/CustomModal/CustomModal';
-
 const App: React.FC = () => {
   const client = createClient();
 

@@ -6,7 +6,9 @@ import { HOME_PAGE } from 'router/constants';
 import PrivateRoute from 'router/PrivateOutlet';
 
 import HomePage from 'pages/HomePage/HomePage';
+import Login from 'pages/Login/Login';
 import NotFoundPage from 'pages/NotFoundPage/NotFoundPage';
+import Signup from 'pages/Signup/Signup';
 
 import ErrorBoundary from 'components/ErrorBoundary';
 
@@ -31,6 +33,8 @@ const MainRouter: React.FC<React.PropsWithChildren> = () => {
           <Route path="edit" element={<CompanyEdit />} />
         </Route>
       </Route>
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
     </Routes>
   );
 };

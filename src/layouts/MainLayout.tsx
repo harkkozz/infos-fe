@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { Layout, theme } from 'antd';
-
-import { useModalStore } from 'store/modal';
+import { useNavigate } from 'react-router-dom';
 
 import Footer from 'components/Footer/Footer';
 import Header from 'components/Header/Header';
@@ -12,14 +11,14 @@ import styles from './MainLayout.module.scss';
 const { Content } = Layout;
 
 const MainLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const onModalOpen = useModalStore((state) => state.open);
+  const navigate = useNavigate();
 
   const {
     token: { colorBgContainer }
   } = theme.useToken();
   return (
     <Layout className={styles.layout}>
-      <Header handleOnLoginClick={() => onModalOpen('LOGIN')} />
+      <Header handleOnLoginClick={() => navigate('/login')} handleOnSignupClick={() => navigate('/signup')} />
       <Content style={{ backgroundColor: colorBgContainer }}>
         <div className={styles.siteLayoutContent}>{children}</div>
       </Content>

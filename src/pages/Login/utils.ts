@@ -1,10 +1,9 @@
-export const inputConfig = (styles) => [
+export const inputConfig = [
   {
     type: 'default',
     name: 'email',
     label: 'Email',
-    placeholder: 'Insert your email',
-    class: styles.inputClass
+    placeholder: 'Insert your email'
   },
   {
     name: 'password',
