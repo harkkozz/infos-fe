@@ -1,38 +1,36 @@
 import React from 'react';
 
-import AsyncSelect, { ActionMeta, SingleValue } from 'react-select';
+import { ActionMeta, SingleValue } from 'react-select';
+import AsyncSelect from 'react-select/async';
 
 import { typeaheadStyles } from 'components/AsyncTypeahead/AsyncTypeaheadStyles';
 
 export type TypeaheadOption = { label: string; value: string };
 
 interface IProps {
-  options: TypeaheadOption[];
   placeholder?: string;
-  isLoading: boolean;
   selectContainerClass?: string;
-  onInputChange: (arg: string) => void;
+  loadOptions: (inputValue: string, callback: (options: TypeaheadOption[]) => void) => void;
+  defaultOptions: TypeaheadOption[];
   onChange: (newValue: SingleValue<TypeaheadOption>, actionMeta: ActionMeta<TypeaheadOption>) => void;
 }
 
 const AsyncTypeahead: React.FC<IProps> = ({
-  options,
+  loadOptions,
+  defaultOptions,
+  onChange,
   placeholder,
-  isLoading,
-  selectContainerClass = '',
-  onInputChange,
-  onChange
+  selectContainerClass = ''
 }) => {
   return (
     <AsyncSelect
       className={selectContainerClass}
-      options={options}
-      placeholder={placeholder}
       styles={typeaheadStyles}
-      onInputChange={onInputChange}
+      cacheOptions
+      defaultOptions={defaultOptions}
+      loadOptions={loadOptions}
       onChange={onChange}
-      isLoading={isLoading}
-      isClearable
+      placeholder={placeholder}
     />
   );
 };
