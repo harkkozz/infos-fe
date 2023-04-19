@@ -5,7 +5,7 @@ import { initReactI18next } from 'react-i18next';
 import { defaultTranslations } from './defaultTranslations';
 
 export function setup() {
-  const idiomDefault = defaultTranslations();
+  const translations = defaultTranslations();
 
   i18n
     .use(initReactI18next)
@@ -14,7 +14,7 @@ export function setup() {
       detection: {
         caches: []
       },
-      resources: idiomDefault,
+      resources: translations,
       defaultNS: 'translation',
       ns: ['translation'],
       fallbackLng: 'en',

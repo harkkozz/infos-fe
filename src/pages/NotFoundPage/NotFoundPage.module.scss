@@ -1,6 +1,5 @@
 .notFoundPage {
   display: flex;
-  padding: 50px 0;
   font-family: 'Roboto-Medium', sans-serif;
   flex-direction: column;
   justify-content: center;
@@ -8,8 +7,22 @@
   width: 100%;
 
   button {
-    margin-top: 40px;
     font-family: 'Roboto-Medium', sans-serif;
     font-size: 20px;
+  }
+}
+
+.notFoundIcon {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 200px;
+
+  @media (min-width: 760px) {
+    margin-top: 50px;
   }
 }

@@ -12,10 +12,16 @@ const NotFoundPage: React.FC = () => {
   return (
     <div className={styles.notFoundPage}>
       <h1>Page not found</h1>
-      <NotFound />
-      <Button size="large" onClick={() => navigate(-1)}>
-        Go back
-      </Button>
+      <NotFound className={styles.notFoundIcon} />
+
+      <div className={styles.actions}>
+        <Button size="large" onClick={() => navigate(-1)}>
+          Go back
+        </Button>
+        <Button size="large" onClick={() => navigate({ pathname: '/' })}>
+          Go home
+        </Button>
+      </div>
     </div>
   );
 };

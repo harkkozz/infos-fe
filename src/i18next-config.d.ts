@@ -1,7 +1,7 @@
 // import the original type declarations
-// import all namespaces (for the default language, only)
 import 'i18next';
-import { translation } from 'utils/translations/translations/en.json';
+// import all namespaces (for the default language, only)
+import { translation } from 'utils/translations/en.json';
 
 declare module 'i18next' {
   interface CustomTypeOptions {
