@@ -1,6 +1,7 @@
 {
   "translation": {
-    "login": "Login",
+    "login": "Log In",
+    "logout": "Log Out",
     "signup": "Sign up",
     "searchCompany": "Search for a company"
   }

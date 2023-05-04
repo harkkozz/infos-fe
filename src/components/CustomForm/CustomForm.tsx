@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button, Form } from 'antd';
+import { Button, Col, Form, Row } from 'antd';
 
 import CustomInput from 'components/CustomInput/CustomInput';
 
@@ -25,20 +25,26 @@ const CustomForm: React.FC<IProps> = ({
 
   return (
     <div className={formWrapperClass}>
-      <Form labelCol={{ span: 8 }} wrapperCol={{ span: 16 }} form={form} onFinish={onFormSubmit} size="large">
-        {inputConfig.map((input: any) => (
-          <Form.Item key={`${formType}-${input.name}`} name={input.name} label={input.label}>
-            <CustomInput type={input.type} inputWrapperClass={input.class} placeholder={input.placeholder} />
-          </Form.Item>
-        ))}
-        {hasSubmitButton && (
-          <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-            <Button type="default" htmlType="submit">
-              {buttonText}
-            </Button>
-          </Form.Item>
-        )}
-      </Form>
+      <Row justify={'center'}>
+        <Col xs={22} md={20}>
+          <Form layout="vertical" form={form} onFinish={onFormSubmit} size="large">
+            {inputConfig.map((input: any) => (
+              <Form.Item key={`${formType}-${input.name}`} name={input.name} label={input.label}>
+                <CustomInput type={input.type} inputWrapperClass={input.class} placeholder={input.placeholder} />
+              </Form.Item>
+            ))}
+            {hasSubmitButton && (
+              <Form.Item>
+                <Row>
+                  <Button type="default" htmlType="submit">
+                    {buttonText}
+                  </Button>
+                </Row>
+              </Form.Item>
+            )}
+          </Form>
+        </Col>
+      </Row>
     </div>
   );
 };

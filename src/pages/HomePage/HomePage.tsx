@@ -37,7 +37,6 @@ const HomePage: React.FC<React.PropsWithChildren> = () => {
   const handleSelect = (selected: TypeaheadOption) => {
     // TODO company details page
     navigate({ pathname: `company/${selected.value}` });
-    console.log(selected);
   };
 
   const options = useMemo(

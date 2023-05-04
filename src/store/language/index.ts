@@ -1,26 +1,30 @@
 import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 
+interface ILanguage {
+  translationCode: string;
+  countryCode: string;
+  name: string;
+}
+
 interface IState {
-  lng: string;
+  language: ILanguage;
 }
 
 interface IAction {
-  setLng: (lng: string) => void;
+  setLanguage: (language: ILanguage) => void;
 }
 
 export const useLangaugeStore = create<IState & IAction>()(
   devtools(
     persist(
       (set) => ({
-        lng: 'en',
-        setLng: (lng) =>
-          set(
-            (state) =>
-              state.lng !== lng && {
-                lng
-              }
-          )
+        language: {
+          translationCode: 'en',
+          countryCode: 'gb',
+          name: 'United Kingdom'
+        },
+        setLanguage: (language) => set((state) => state.language.countryCode !== language.countryCode && { language })
       }),
       {
         name: 'language-storage'

@@ -1,6 +1,7 @@
 {
   "translation": {
     "login": "Uloguj se",
+    "logout": "Odjavi se",
     "signup": "Registruj se",
     "searchCompany": "Pretraži kompaniju"
   }

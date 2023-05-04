@@ -4,6 +4,7 @@
 .header {
   @include fontMedium20;
   display: flex;
+  align-items: center;
   padding: 1rem;
   background-color: $white;
 }
@@ -19,4 +20,46 @@
   display: flex;
   justify-content: space-evenly;
   min-width: 250px;
+}
+
+.headerActionsContainer {
+  display: flex;
+}
+
+.avatar {
+  font-family: Roboto-Bold;
+  cursor: pointer;
+  background-color: $primary;
+  position: relative;
+}
+
+.activeAvatar {
+  box-shadow: 0 0 5px 0px $primary;
+}
+
+.menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto-Regular;
+  font-size: 16px;
+  right: 1%;
+  top: 6%;
+  border-top: 3px solid $primary;
+  background-color: $paleWhite;
+  padding: 10px;
+}
+
+.menuItem {
+  display: flex;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.menuItemProfile {
+  cursor: pointer;
+
+  &:hover {
+    color: $primary;
+  }
 }

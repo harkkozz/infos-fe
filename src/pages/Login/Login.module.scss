@@ -1,9 +1,11 @@
 .login {
   align-items: center;
   display: flex;
-  height: 100vh;
   justify-content: space-evenly;
-  width: 100vw;
+
+  @media (min-width: 1024px) {
+    height: 100vh;
+  }
 }
 
 .loginIcon {
@@ -27,4 +29,10 @@
   @media (min-width: 1024px) {
     min-width: 600px;
   }
+}
+
+.homeButtonWrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 }
