@@ -6,7 +6,6 @@ import { Button } from 'antd';
 import { LOGIN } from 'apollo/queries/user/login';
 import { ReactComponent as LoginIcon } from 'assets/icons/undraw_login_re_4vu2.svg';
 import { useNavigate } from 'react-router';
-import { useStore } from 'zustand';
 
 import { useUserStorage } from 'store/user';
 
