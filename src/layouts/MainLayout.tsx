@@ -10,7 +10,10 @@ import styles from './MainLayout.module.scss';
 
 const { Content } = Layout;
 
-const MainLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
+interface Props {
+  hasFooter?: boolean;
+}
+const MainLayout: React.FC<React.PropsWithChildren<Props>> = ({ children, hasFooter = false }) => {
   const navigate = useNavigate();
 
   const {
@@ -22,7 +25,7 @@ const MainLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
       <Content style={{ backgroundColor: colorBgContainer }}>
         <div className={styles.siteLayoutContent}>{children}</div>
       </Content>
-      <Footer />
+      {hasFooter && <Footer />}
     </Layout>
   );
 };

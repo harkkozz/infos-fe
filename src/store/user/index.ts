@@ -5,7 +5,9 @@ import { create } from 'zustand';
 import { devtools, persist } from 'zustand/middleware';
 
 interface IUser {
+  id: string;
   name: string;
+  slug: string;
   email: string;
   password: string;
 }
@@ -14,7 +16,7 @@ interface IState {
   iat?: number;
   exp?: number;
   token: string | null;
-  user?: IUser;
+  user?: Partial<IUser>;
 }
 
 interface IAction {
@@ -28,22 +30,19 @@ export const useUserStorage = create<IState & IAction>()(
         token: null,
         user: null,
         setUser: (token) =>
-          set((state) => {
+          set(() => {
             if (token) {
               const decodedJwt: IState = decodeToken(token);
 
               return {
-                ...state,
                 ...decodedJwt,
                 token
               };
             }
 
             return {
-              iat: null,
-              exp: null,
               token: null,
-              user: null
+              user: {}
             };
           })
       }),

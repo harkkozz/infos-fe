@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 
+import HomeIcon from '@iconscout/react-unicons/icons/uil-home';
 import { Avatar, Button, Layout } from 'antd';
 import { ReactComponent as Logo } from 'assets/icons/vite.svg';
 import classnames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import { isExpired } from 'react-jwt';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { getNameInitials } from 'utils/helpers';
 
 import { useUserStorage } from 'store/user';
@@ -21,6 +23,7 @@ const Header: React.FC<IProps> = ({ handleOnLoginClick, handleOnSignupClick }) =
 
   const { token, user, setUser } = useUserStorage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const onAvatarClick = () => {
     setIsMenuOpen((prevState) => !prevState);
@@ -30,12 +33,14 @@ const Header: React.FC<IProps> = ({ handleOnLoginClick, handleOnSignupClick }) =
     setUser(null);
   };
 
-  console.log(isExpired(token));
+  const handleOnLogoClick = () => {
+    navigate('/');
+  };
 
   return (
     <Layout.Header className={styles.header}>
       <div className={styles.headerContent}>
-        <div>
+        <div className={styles.homeLogo} onClick={handleOnLogoClick}>
           <Logo height={30} width={40} />
         </div>
 
@@ -58,9 +63,26 @@ const Header: React.FC<IProps> = ({ handleOnLoginClick, handleOnSignupClick }) =
               </Avatar>
               {isMenuOpen && (
                 <div className={styles.menu}>
-                  <div className={classnames(styles.menuItem, styles.menuItemProfile)} onClick={console.log}>
+                  <NavLink
+                    to={`/`}
+                    className={({ isActive }) => {
+                      return classnames(styles.menuItem, {
+                        [styles.isActive]: isActive
+                      });
+                    }}
+                  >
+                    <HomeIcon /> {t('home')}
+                  </NavLink>
+                  <NavLink
+                    to={`/user/${user.slug}`}
+                    className={({ isActive }) => {
+                      return classnames(styles.menuItem, {
+                        [styles.isActive]: isActive
+                      });
+                    }}
+                  >
                     {user.name}
-                  </div>
+                  </NavLink>
                   <div className={styles.menuItem}>
                     <Button onClick={handleLogout}>{t('logout')}</Button>
                   </div>

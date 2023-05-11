@@ -8,6 +8,7 @@ export const Get_Company_By_Name_State_City = gql`
       email
       phoneNumber
       city
+      slug
       state
       createdAt
       updatedAt

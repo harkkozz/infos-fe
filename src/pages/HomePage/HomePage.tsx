@@ -9,7 +9,7 @@ import { Companies } from 'types/company/types';
 import { debounce } from 'utils/helpers';
 
 import AsyncTypeahead, { TypeaheadOption } from 'components/AsyncTypeahead/AsyncTypeahead';
-import ErrorBoundary from 'components/ErrorBoundary';
+import ErrorBoundary from 'components/ErrorBoundary/ErrorBoundary';
 
 import styles from './HomePage.module.scss';
 
@@ -26,7 +26,7 @@ const HomePage: React.FC<React.PropsWithChildren> = () => {
       const { data } = await getCompany({ variables: { query } });
 
       const options = data.getCompanyBy?.map((result) => ({
-        value: result.id,
+        value: result.slug,
         label: result.companyName
       }));
 
@@ -55,7 +55,7 @@ const HomePage: React.FC<React.PropsWithChildren> = () => {
   }
 
   return (
-    <MainLayout>
+    <MainLayout hasFooter>
       <div className={styles.asyncTypeaheadWrapper}>
         <AsyncTypeahead
           selectContainerClass={styles.selectContainer}

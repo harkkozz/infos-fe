@@ -4,7 +4,7 @@ import { useMutation } from '@apollo/client';
 import HomeIcon from '@iconscout/react-unicons/icons/uil-home';
 import { Button } from 'antd';
 import { LOGIN } from 'apollo/queries/user/login';
-import { ReactComponent as LoginIcon } from 'assets/icons/undraw_login_re_4vu2.svg';
+import { ReactComponent as LoginImage } from 'assets/icons/undraw_login_re_4vu2.svg';
 import { useNavigate } from 'react-router';
 
 import { useUserStorage } from 'store/user';
@@ -30,7 +30,7 @@ const Login = () => {
 
       <div className={styles.login}>
         <div className={styles.formWrapper}>
-          <LoginIcon className={styles.loginIcon} />
+          <LoginImage className={styles.loginIcon} />
           <CustomForm
             formType="login"
             formWrapperClass={styles.formClass}
