@@ -1,11 +1,12 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 
 import { useQuery } from '@apollo/client';
-import { Button } from 'antd';
+import TrashIcon from '@iconscout/react-unicons/icons/uil-trash-alt';
+import { Button, Modal } from 'antd';
 import { ColumnsType } from 'antd/es/table';
 import { Get_Users_Companies } from 'apollo/queries/user/userById';
 import MainLayout from 'layouts/MainLayout';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Company } from 'types/company/types';
 
 import { useUserStorage } from 'store/user';
@@ -16,9 +17,19 @@ import CustomTable from 'components/CustomTable/CustomTable';
 
 const UserProfile = () => {
   const { user } = useUserStorage();
+  const navigate = useNavigate();
+  const [openModal, setOpenModal] = useState(false);
+  const [selectedCompany, setSelectedCompany] = useState<Partial<Company>>({});
 
   const { data, loading, error } = useQuery(Get_Users_Companies, { variables: { userId: user.id } });
 
+  const handleOpenModal = () => {
+    setOpenModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
+  };
   const columns: ColumnsType<any> = useMemo(
     () => [
       {
@@ -56,7 +67,14 @@ const UserProfile = () => {
             <div className={styles.tableActionCell}>
               <Link to={`/company/${record.slug}`}>View {record.name}</Link>
               <Link to={`/company/${record.slug}/edit/${record.id}`}>Edit {record.name}</Link>
-              <Button onClick={() => console.log(record.id)}>Delete</Button>
+              <div className={styles.trashIconWrapper}>
+                <TrashIcon
+                  onClick={() => {
+                    setSelectedCompany(record);
+                    handleOpenModal();
+                  }}
+                />
+              </div>
             </div>
           );
         }
@@ -79,6 +97,9 @@ const UserProfile = () => {
     <MainLayout>
       <div className={styles.userProfile}>
         <h2>My companies</h2>
+        <Button className={styles.addNewCompanyButton} onClick={() => navigate('/company/add-new')}>
+          Add new company
+        </Button>
         {!loading && (
           <CustomTable
             data={companies.map((c) => ({
@@ -88,6 +109,17 @@ const UserProfile = () => {
             columns={columns}
           />
         )}
+        <Modal
+          title="Confirmation dialog"
+          open={openModal}
+          onOk={() => console.log('ok')}
+          confirmLoading={false}
+          onCancel={handleCloseModal}
+        >
+          <p>
+            Are you sure you want to delete <b>{selectedCompany.companyName}</b>?
+          </p>
+        </Modal>
       </div>
     </MainLayout>
   );

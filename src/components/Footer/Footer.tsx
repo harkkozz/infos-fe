@@ -11,14 +11,14 @@ const Footer: React.FC = () => {
   const date = new Date();
 
   return (
-    <div>
+    <Layout.Footer className={styles.footer}>
       <div className={styles.footerImagesContainer}>
         <BuildingsOneImage className={styles.buildings} />
         <BuildingsTwoImage className={styles.buildings} />
         <BuildingsThreeImage className={styles.buildings} />
       </div>
-      <Layout.Footer className={styles.footer}>Infos &copy; {date.getUTCFullYear()}</Layout.Footer>
-    </div>
+      <p>Infos &copy; {date.getUTCFullYear()}</p>
+    </Layout.Footer>
   );
 };
 

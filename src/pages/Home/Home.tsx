@@ -8,10 +8,10 @@ import { useNavigate } from 'react-router-dom';
 import { Companies } from 'types/company/types';
 import { debounce } from 'utils/helpers';
 
+import styles from 'pages/Home/Home.module.scss';
+
 import AsyncTypeahead, { TypeaheadOption } from 'components/AsyncTypeahead/AsyncTypeahead';
 import ErrorBoundary from 'components/ErrorBoundary/ErrorBoundary';
-
-import styles from './HomePage.module.scss';
 
 const HomePage: React.FC<React.PropsWithChildren> = () => {
   const navigate = useNavigate();

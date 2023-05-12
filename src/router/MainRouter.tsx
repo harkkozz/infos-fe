@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy } from 'react';
 
 import { Route, Routes } from 'react-router-dom';
 
@@ -8,13 +8,14 @@ import PrivateOutlet from 'router/PrivateOutlet';
 import AddNewCompany from 'pages/Company/AddNew/AddNew';
 import CompanyEdit from 'pages/Company/Edit/Edit';
 import CompanyProfile from 'pages/Company/Profile/Profile';
-import HomePage from 'pages/HomePage/HomePage';
-import Login from 'pages/Login/Login';
 import NotFoundPage from 'pages/NotFoundPage/NotFoundPage';
-import Signup from 'pages/Signup/Signup';
 import UserProfile from 'pages/User/Profile/Profile';
 
 import ErrorBoundary from 'components/ErrorBoundary/ErrorBoundary';
+
+const HomePage = lazy(() => import('pages/Home/Home'));
+const LoginPage = lazy(() => import('pages/Login/Login'));
+const SignupPage = lazy(() => import('pages/Signup/Signup'));
 
 const MainRouter: React.FC<React.PropsWithChildren> = () => {
   return (
@@ -27,8 +28,8 @@ const MainRouter: React.FC<React.PropsWithChildren> = () => {
         <Route path="company/:slug/edit/:id" element={<CompanyEdit />} />
         <Route path="company/add-new" element={<AddNewCompany />} />
       </Route>
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/signup" element={<SignupPage />} />
     </Routes>
   );
 };

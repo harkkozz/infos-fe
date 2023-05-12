@@ -1,8 +1,12 @@
+@import '../styles/variables.scss';
+
 .layout {
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
 }
 
 .siteLayoutContent {
-  flex: 1;
-  min-height: 300px;
+  background-color: $white;
+  padding: 0 50px;
+  min-height: max-content;
 }

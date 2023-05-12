@@ -1,4 +1,12 @@
-export const inputConfig = [
+export interface InputConfig {
+  type: 'password' | 'default';
+  name: string;
+  label: string;
+  placeholder: string;
+  class?: string;
+}
+
+export const inputConfig: InputConfig[] = [
   {
     type: 'default',
     name: 'email',

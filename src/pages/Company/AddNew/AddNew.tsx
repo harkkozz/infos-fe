@@ -1,9 +1,10 @@
 import React from 'react';
 
 import { useMutation } from '@apollo/client';
-import { Button, Col, Form, Row } from 'antd';
+import { Button, Col, Form, Row, Select } from 'antd';
 import { Create_Company } from 'apollo/queries/company/addNewCompany';
 import MainLayout from 'layouts/MainLayout';
+import { toast } from 'react-toastify';
 
 import { useUserStorage } from 'store/user';
 
@@ -23,24 +24,91 @@ const AddNewCompany = () => {
           <Form
             layout="vertical"
             size="large"
-            onFinish={async (values) =>
-              await handleCreateNewCompany({ variables: { company: { ...values, userId: user.id } } })
-            }
+            onFinish={async (values) => {
+              try {
+                await handleCreateNewCompany({
+                  variables: {
+                    company: { ...values, phoneNumber: `${values.prefix}${values.phoneNumber}`, userId: user.id }
+                  }
+                });
+                toast.success('Company created');
+              } catch (error) {
+                if (error instanceof Error) toast.error(error.cause as string);
+              }
+            }}
           >
-            <Form.Item name={'companyName'} label={'Company name'}>
+            <Form.Item
+              rules={[
+                { type: 'string' },
+                {
+                  required: true,
+                  message: 'Company name field is required'
+                }
+              ]}
+              name={'companyName'}
+              label={'Company name'}
+            >
               <CustomInput type="default" placeholder={'Company name'} />
             </Form.Item>
-            <Form.Item name={'state'} label={'State'}>
+            <Form.Item
+              rules={[
+                {
+                  required: true,
+                  message: 'State field is required'
+                }
+              ]}
+              name={'state'}
+              label={'State'}
+            >
               <CustomInput type="default" placeholder={'State'} />
             </Form.Item>
-            <Form.Item name={'city'} label={'City'}>
+            <Form.Item
+              rules={[
+                {
+                  required: true,
+                  message: 'City field is required'
+                }
+              ]}
+              name={'city'}
+              label={'City'}
+            >
               <CustomInput type="default" placeholder={'City'} />
             </Form.Item>
-            <Form.Item name={'email'} label={'Email'}>
+            <Form.Item
+              rules={[
+                { type: 'email', message: 'Not valid input email' },
+                {
+                  required: true,
+                  message: 'Email field is required'
+                }
+              ]}
+              name={'email'}
+              label={'Email'}
+            >
               <CustomInput type="default" placeholder={'Email'} />
             </Form.Item>
-            <Form.Item name={'phoneNumber'} label={'Phone number'}>
-              <CustomInput type="default" placeholder={'Phone number'} />
+            <Form.Item
+              rules={[
+                {
+                  required: true,
+                  message: 'Phone number field is required'
+                }
+              ]}
+              name={'phoneNumber'}
+              label={'Phone number'}
+            >
+              <CustomInput
+                addonBefore={
+                  <Form.Item noStyle>
+                    <Select style={{ width: 90 }} defaultValue={381}>
+                      <Select.Option value="381">+381</Select.Option>
+                      <Select.Option value="382">+382</Select.Option>
+                    </Select>
+                  </Form.Item>
+                }
+                type="default"
+                placeholder={'Phone number'}
+              />
             </Form.Item>
 
             <Form.Item>

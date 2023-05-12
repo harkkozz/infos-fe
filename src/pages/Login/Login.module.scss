@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .login {
   align-items: center;
   display: flex;
@@ -31,8 +33,10 @@
   }
 }
 
-.homeButtonWrapper {
-  display: flex;
-  justify-content: flex-end;
+.submitButton {
   width: 100%;
+
+  @media only screen and (min-width: 1024px) {
+    width: auto;
+  }
 }
