@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { Layout } from 'antd';
-import { ReactComponent as BuildingsOneImage } from 'assets/icons/undraw_best_place_re_lne9.svg';
-import { ReactComponent as BuildingsTwoImage } from 'assets/icons/undraw_city_life_gnpr.svg';
-import { ReactComponent as BuildingsThreeImage } from 'assets/icons/undraw_town_re_2ng5.svg';
+import { ReactComponent as BuildingsOneImage } from 'assets/icons/best_place.svg';
+import { ReactComponent as BuildingsTwoImage } from 'assets/icons/city_life.svg';
+import { ReactComponent as BuildingsThreeImage } from 'assets/icons/town.svg';
 
 import styles from './Footer.module.scss';
 

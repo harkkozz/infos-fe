@@ -13,12 +13,12 @@ import { useUserStorage } from 'store/user';
 
 import styles from './Header.module.scss';
 
-interface IProps {
+interface Props {
   handleOnLoginClick: () => void;
   handleOnSignupClick: () => void;
 }
 
-const Header: React.FC<IProps> = ({ handleOnLoginClick, handleOnSignupClick }) => {
+const Header: React.FC<Props> = ({ handleOnLoginClick, handleOnSignupClick }) => {
   const { t } = useTranslation();
 
   const { token, user, setUser } = useUserStorage();

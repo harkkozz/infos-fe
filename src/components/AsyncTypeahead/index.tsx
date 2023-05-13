@@ -7,7 +7,7 @@ import { typeaheadStyles } from 'components/AsyncTypeahead/AsyncTypeaheadStyles'
 
 export type TypeaheadOption = { label: string; value: string };
 
-interface IProps {
+interface Props {
   placeholder?: string;
   selectContainerClass?: string;
   loadOptions: (inputValue: string, callback: (options: TypeaheadOption[]) => void) => void;
@@ -15,7 +15,7 @@ interface IProps {
   onChange: (newValue: SingleValue<TypeaheadOption>, actionMeta: ActionMeta<TypeaheadOption>) => void;
 }
 
-const AsyncTypeahead: React.FC<IProps> = ({
+const AsyncTypeahead: React.FC<Props> = ({
   loadOptions,
   defaultOptions,
   onChange,

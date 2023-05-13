@@ -2,7 +2,7 @@ import React from 'react';
 
 import MainLayout from 'layouts/MainLayout';
 
-const CompanyEdit = () => {
+const CompanyEdit: React.FC = () => {
   return (
     <MainLayout>
       <div>Edit company</div>

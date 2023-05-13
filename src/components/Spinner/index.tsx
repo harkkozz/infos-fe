@@ -9,7 +9,7 @@ interface Props {
   isSuspense?: boolean;
 }
 
-const Spinner = ({ size = 'default', isSuspense = false }: Props) => {
+const Spinner: React.FC<Props> = ({ size = 'default', isSuspense = false }) => {
   const spinSuspenseStyle: React.CSSProperties = {
     position: 'absolute',
     display: 'flex',

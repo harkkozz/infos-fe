@@ -1,6 +1,4 @@
-@import '../../styles/variables.scss';
-
-.login {
+.auth {
   align-items: center;
   display: flex;
   justify-content: space-evenly;
@@ -8,10 +6,6 @@
   @media (min-width: 1024px) {
     height: 100vh;
   }
-}
-
-.loginIcon {
-  max-width: 100%;
 }
 
 .formWrapper {
@@ -23,20 +17,5 @@
 
   @media (min-width: 1024px) {
     flex-direction: row;
-  }
-}
-
-.formClass {
-  min-width: 100%;
-  @media (min-width: 1024px) {
-    min-width: 600px;
-  }
-}
-
-.submitButton {
-  width: 100%;
-
-  @media only screen and (min-width: 1024px) {
-    width: auto;
   }
 }

@@ -8,7 +8,7 @@ interface Props {
   columns: ColumnType<any>[];
 }
 
-const CustomTable = ({ data, columns }: Props) => {
+const CustomTable: React.FC<Props> = ({ data, columns }) => {
   return <Table dataSource={data} columns={columns} />;
 };
 

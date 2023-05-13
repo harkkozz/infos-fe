@@ -5,15 +5,14 @@ import { Get_Company_By_Name_State_City } from 'apollo/queries/company/getCompan
 import MainLayout from 'layouts/MainLayout';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { Companies } from 'types/company/types';
 import { debounce } from 'utils/helpers';
+import { Companies } from 'utils/types/company';
 
 import styles from 'pages/Home/Home.module.scss';
 
-import AsyncTypeahead, { TypeaheadOption } from 'components/AsyncTypeahead/AsyncTypeahead';
-import ErrorBoundary from 'components/ErrorBoundary/ErrorBoundary';
+import AsyncTypeahead, { TypeaheadOption } from 'components/AsyncTypeahead';
 
-const HomePage: React.FC<React.PropsWithChildren> = () => {
+const HomePage: React.FC = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
@@ -51,7 +50,7 @@ const HomePage: React.FC<React.PropsWithChildren> = () => {
   );
 
   if (error) {
-    return <ErrorBoundary />;
+    return <h1>Error</h1>;
   }
 
   return (

@@ -7,15 +7,15 @@ import { ColumnsType } from 'antd/es/table';
 import { Get_Users_Companies } from 'apollo/queries/user/userById';
 import MainLayout from 'layouts/MainLayout';
 import { Link, useNavigate } from 'react-router-dom';
-import { Company } from 'types/company/types';
+import type { Company } from 'utils/types/company';
 
 import { useUserStorage } from 'store/user';
 
 import styles from 'pages/User/Profile/Profile.module.scss';
 
-import CustomTable from 'components/CustomTable/CustomTable';
+import CustomTable from 'components/CustomTable';
 
-const UserProfile = () => {
+const UserProfile: React.FC = () => {
   const { user } = useUserStorage();
   const navigate = useNavigate();
   const [openModal, setOpenModal] = useState(false);

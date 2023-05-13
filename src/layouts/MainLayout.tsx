@@ -3,8 +3,8 @@ import React from 'react';
 import { Layout } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
-import Footer from 'components/Footer/Footer';
-import Header from 'components/Header/Header';
+import Footer from 'components/Footer';
+import Header from 'components/Header';
 
 import styles from './MainLayout.module.scss';
 

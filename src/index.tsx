@@ -5,7 +5,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { setup as i18nSetup } from 'utils/translations/setup';
 
-import Spinner from 'components/Spinner/Spinner';
+import Spinner from 'components/Spinner';
 
 import App from './App';
 import './index.css';
