@@ -34,7 +34,7 @@ const CustomForm: React.FC<Props> = ({
           hasFeedback={input.formItemHasFeedback}
         >
           <CustomInput
-            type={input.type}
+            inputType={input.inputType}
             inputWrapperClass={input.class}
             placeholder={input.placeholder}
             {...input.inputProps}

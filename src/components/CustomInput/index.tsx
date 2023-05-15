@@ -4,7 +4,7 @@ import { Input, InputProps } from 'antd';
 import { InputType } from 'utils/types/input/input';
 
 interface Props extends InputProps {
-  type: InputType;
+  inputType: InputType;
   inputWrapperClass?: string;
 }
 
@@ -13,8 +13,8 @@ const inputTypes = {
   password: Input.Password
 };
 
-const CustomInput: React.FC<Props> = ({ type, inputWrapperClass, ...inputProps }) => {
-  const InputComponent = inputTypes[type] || null;
+const CustomInput: React.FC<Props> = ({ inputType, inputWrapperClass, ...inputProps }) => {
+  const InputComponent = inputTypes[inputType];
 
   return (
     <div className={inputWrapperClass}>

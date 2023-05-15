@@ -5,7 +5,7 @@ import { InputConfig } from 'utils/types/input/input';
 
 export const inputConfig: InputConfig[] = [
   {
-    type: 'default',
+    inputType: 'default',
     name: 'companyName',
     label: 'Company name',
     placeholder: 'Insert Company name',
@@ -17,7 +17,7 @@ export const inputConfig: InputConfig[] = [
     ]
   },
   {
-    type: 'default',
+    inputType: 'default',
     name: 'email',
     label: 'Email',
     placeholder: 'Insert your email',
@@ -30,7 +30,7 @@ export const inputConfig: InputConfig[] = [
     ]
   },
   {
-    type: 'default',
+    inputType: 'default',
     name: 'state',
     label: 'State',
     placeholder: 'Insert State',
@@ -42,7 +42,7 @@ export const inputConfig: InputConfig[] = [
     ]
   },
   {
-    type: 'default',
+    inputType: 'default',
     name: 'city',
     label: 'City',
     placeholder: 'Insert City',
@@ -54,7 +54,7 @@ export const inputConfig: InputConfig[] = [
     ]
   },
   {
-    type: 'default',
+    inputType: 'default',
     name: 'phoneNumber',
     label: 'Phone number',
     placeholder: 'Insert Phone number',

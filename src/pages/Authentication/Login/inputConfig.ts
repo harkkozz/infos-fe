@@ -2,7 +2,7 @@ import { InputConfig } from 'utils/types/input/input';
 
 export const inputConfig: InputConfig[] = [
   {
-    type: 'default',
+    inputType: 'default',
     name: 'email',
     label: 'Email',
     placeholder: 'Insert your email',
@@ -15,10 +15,10 @@ export const inputConfig: InputConfig[] = [
     ]
   },
   {
+    inputType: 'password',
     name: 'password',
-    placeholder: 'Insert your password',
     label: 'Password',
-    type: 'password',
+    placeholder: 'Insert your password',
     formItemHasFeedback: true,
     rules: [{ type: 'string' }, { required: true, message: 'Password is required' }, { min: 5 }]
   }

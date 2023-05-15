@@ -4,7 +4,7 @@ import { Rule } from 'antd/es/form';
 export type InputType = 'password' | 'default';
 
 export interface InputConfig {
-  type: InputType;
+  inputType: InputType;
   name: string;
   label: string;
   placeholder: string;
