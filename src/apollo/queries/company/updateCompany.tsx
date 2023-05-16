@@ -1,15 +1,15 @@
 import { gql } from '@apollo/client';
 
-export const Search_Company = gql`
-  query SearchCompany($query: String!) {
-    searchCompany(query: $query) {
+export const Edit_Company = gql`
+  mutation EditCompany($id: String!, $company: CompanyInput!) {
+    editCompany(id: $id, company: $company) {
       id
       companyName
       email
       phoneNumber
       city
-      slug
       state
+      slug
       createdAt
       updatedAt
       userId

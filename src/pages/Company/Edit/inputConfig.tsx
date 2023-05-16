@@ -9,6 +9,9 @@ export const inputConfig: InputConfig[] = [
     name: 'companyName',
     label: 'Company name',
     placeholder: 'Insert Company name',
+    inputProps: {
+      allowClear: true
+    },
     rules: [
       {
         type: 'string'
@@ -21,6 +24,9 @@ export const inputConfig: InputConfig[] = [
     name: 'email',
     label: 'Email',
     placeholder: 'Insert your email',
+    inputProps: {
+      allowClear: true
+    },
     rules: [
       {
         type: 'email',
@@ -34,6 +40,9 @@ export const inputConfig: InputConfig[] = [
     name: 'state',
     label: 'State',
     placeholder: 'Insert State',
+    inputProps: {
+      allowClear: true
+    },
     rules: [
       {
         type: 'string'
@@ -46,6 +55,9 @@ export const inputConfig: InputConfig[] = [
     name: 'city',
     label: 'City',
     placeholder: 'Insert City',
+    inputProps: {
+      allowClear: true
+    },
     rules: [
       {
         type: 'string'
@@ -59,6 +71,7 @@ export const inputConfig: InputConfig[] = [
     label: 'Phone number',
     placeholder: 'Insert Phone number',
     inputProps: {
+      allowClear: true,
       addonBefore: (
         <Form.Item name="areaCode" noStyle>
           <Select>

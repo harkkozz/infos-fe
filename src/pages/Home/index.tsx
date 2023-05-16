@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 
 import { useLazyQuery } from '@apollo/client';
-import { Get_Company_By_Name_State_City } from 'apollo/queries/company/getCompany';
+import { Search_Company } from 'apollo/queries/company/getCompany';
 import MainLayout from 'layouts/MainLayout';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
@@ -16,7 +16,7 @@ const HomePage: React.FC = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
-  const [getCompany, { data, error }] = useLazyQuery<Companies>(Get_Company_By_Name_State_City, {
+  const [getCompany, { data, error }] = useLazyQuery<Companies>(Search_Company, {
     fetchPolicy: 'cache-and-network'
   });
 

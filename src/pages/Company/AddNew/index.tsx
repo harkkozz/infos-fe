@@ -21,11 +21,18 @@ const AddNewCompany: React.FC = () => {
   const [form] = useForm();
   const [handleCreateNewCompany] = useMutation(Create_Company);
 
-  const handleOnFinish = async ({ companyName, city, email, phoneNumber, state, prefix }: CompanyCreateFormValues) => {
+  const handleOnFinish = async ({
+    companyName,
+    city,
+    email,
+    areaCode,
+    phoneNumber,
+    state
+  }: CompanyCreateFormValues) => {
     try {
       await handleCreateNewCompany({
         variables: {
-          company: { companyName, city, email, phoneNumber: `${prefix}${phoneNumber}`, state, userId: user.id }
+          company: { companyName, city, email, areaCode, phoneNumber, state, userId: user.id }
         }
       });
       toast.success('Company created');
@@ -42,7 +49,7 @@ const AddNewCompany: React.FC = () => {
           <CustomForm
             form={form}
             name="add-new-company"
-            initValues={{ prefix: '381' }}
+            initValues={{ areaCode: '381' }}
             layout="vertical"
             size="large"
             onFinish={handleOnFinish}

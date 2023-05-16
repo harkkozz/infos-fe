@@ -1,11 +1,12 @@
 import { gql } from '@apollo/client';
 
-export const Search_Company = gql`
-  query SearchCompany($query: String!) {
-    searchCompany(query: $query) {
+export const Get_Company_By_Id = gql`
+  query GetCompanyById($id: String!) {
+    getCompanyById(id: $id) {
       id
       companyName
       email
+      areaCode
       phoneNumber
       city
       slug

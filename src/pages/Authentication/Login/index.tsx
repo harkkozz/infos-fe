@@ -19,7 +19,7 @@ import CustomForm from 'components/CustomForm';
 import { inputConfig } from './inputConfig';
 
 const Login: React.FC = () => {
-  const { setUser } = useUserStorage();
+  const { user, setUser } = useUserStorage();
   const [form] = useForm();
   const navigate = useNavigate();
 
@@ -34,7 +34,7 @@ const Login: React.FC = () => {
         }
       });
 
-      toast.success('User created successfully');
+      toast.success(`Welcome ${user.name}`);
       navigate({ pathname: '/' });
     } catch (error) {
       if (error instanceof Error) toast.error(error.cause as string);

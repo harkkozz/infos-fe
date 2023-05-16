@@ -6,6 +6,7 @@ export interface Company {
   id: string;
   companyName: string;
   email: string;
+  areaCode: string;
   phoneNumber: string;
   slug: string;
   city: string;
@@ -16,9 +17,14 @@ export interface Company {
   __typename: string;
 }
 
+export interface CompanyById {
+  getCompanyById: Company;
+}
+
 export interface CompanyCreateFormValues {
   companyName: string;
   email: string;
+  areaCode: string;
   phoneNumber: string;
   prefix: string;
   city: string;
