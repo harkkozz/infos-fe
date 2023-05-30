@@ -4,7 +4,7 @@ import { useQuery } from '@apollo/client';
 import TrashIcon from '@iconscout/react-unicons/icons/uil-trash-alt';
 import { Button, Modal } from 'antd';
 import { ColumnsType } from 'antd/es/table';
-import { Get_Users_Companies } from 'apollo/queries/user/userById';
+import { GetUsersCompanies } from 'apollo/queries/user/userById';
 import MainLayout from 'layouts/MainLayout';
 import { Link, useNavigate } from 'react-router-dom';
 import type { Company } from 'utils/types/company';
@@ -21,7 +21,7 @@ const UserProfile: React.FC = () => {
   const [openModal, setOpenModal] = useState(false);
   const [selectedCompany, setSelectedCompany] = useState<Partial<Company>>({});
 
-  const { data, loading, error } = useQuery(Get_Users_Companies, { variables: { userId: user.id } });
+  const { data, loading, error } = useQuery(GetUsersCompanies, { variables: { userId: user.id } });
 
   const handleOpenModal = () => {
     setOpenModal(true);
@@ -83,7 +83,7 @@ const UserProfile: React.FC = () => {
     []
   );
 
-  const companies: [Company] = useMemo(() => data?.getUserCompanies, [data?.getUserCompanies]);
+  const companies = useMemo(() => data?.getUserCompanies, [data?.getUserCompanies]);
 
   if (error) {
     return (
@@ -112,7 +112,7 @@ const UserProfile: React.FC = () => {
         <Modal
           title="Confirmation dialog"
           open={openModal}
-          onOk={() => console.log('ok')}
+          onOk={handleCloseModal}
           confirmLoading={false}
           onCancel={handleCloseModal}
         >

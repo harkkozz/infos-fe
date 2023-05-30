@@ -1,6 +1,6 @@
-import { gql } from '@apollo/client';
+import { graphql } from 'graphql-types';
 
-export const Edit_Company = gql`
+export const EditCompany = graphql(/* Grahphql */ `
   mutation EditCompany($id: String!, $company: CompanyInput!) {
     editCompany(id: $id, company: $company) {
       id
@@ -15,4 +15,4 @@ export const Edit_Company = gql`
       userId
     }
   }
-`;
+`);

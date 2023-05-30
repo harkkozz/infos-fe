@@ -15,7 +15,11 @@
     "format": "prettier --write src",
     "lint": "eslint src --fix --cache",
     "lint:tsc": "tsc --project tsconfig.json",
-    "lint:staged": "lint-staged"
+    "lint:staged": "lint-staged",
+    "lint:eslint:report": "eslint src & eslint --cache src -f json > eslint-report.json",
+    "ts-coverage": "type-coverage",
+    "codegen:watch": "graphql-codegen --watch",
+    "codegen:generate": "graphql-codegen"
   },
   "dependencies": {
     "@apollo/client": "^3.7.11",
@@ -40,6 +44,9 @@
     "zustand": "^4.3.7"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^4.0.0",
+    "@graphql-codegen/client-preset": "^4.0.0",
+    "@graphql-typed-document-node/core": "^3.2.0",
     "@testing-library/react": "^14.0.0",
     "@trivago/prettier-plugin-sort-imports": "^4.1.1",
     "@types/react": "^18.0.33",
@@ -59,6 +66,8 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.2.1",
     "prettier": "^2.8.7",
+    "ts-node": "^10.9.1",
+    "type-coverage": "^2.26.0",
     "typescript": "^5.0.3",
     "vite": "^4.2.1",
     "vite-plugin-eslint": "^1.8.1",

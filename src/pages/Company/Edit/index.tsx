@@ -2,12 +2,12 @@ import React, { useMemo } from 'react';
 
 import { useMutation, useQuery } from '@apollo/client';
 import { Col, Row } from 'antd';
-import { Get_Company_By_Id } from 'apollo/queries/company/getCompanyById';
-import { Edit_Company } from 'apollo/queries/company/updateCompany';
+import { GetCompanyById } from 'apollo/queries/company/getCompanyById';
+import { EditCompany } from 'apollo/queries/company/updateCompany';
 import MainLayout from 'layouts/MainLayout';
 import { useParams } from 'react-router';
 import { toast } from 'react-toastify';
-import { Company, CompanyById } from 'utils/types/company';
+import { Company } from 'utils/types/company';
 
 import { useUserStorage } from 'store/user';
 
@@ -19,8 +19,8 @@ const CompanyEdit: React.FC = () => {
   const { id } = useParams<{ slug: string; id: string }>();
   const { user } = useUserStorage();
 
-  const { data, loading, error } = useQuery<CompanyById>(Get_Company_By_Id, { variables: { id } });
-  const [updateCompany] = useMutation<Promise<Company>>(Edit_Company);
+  const { data, loading, error } = useQuery(GetCompanyById, { variables: { id } });
+  const [updateCompany] = useMutation(EditCompany);
 
   const handleUpdateCompany = async (
     values: Omit<Company, 'slug' | 'createdAt' | 'updatedAt' | 'id' | '__typename'>

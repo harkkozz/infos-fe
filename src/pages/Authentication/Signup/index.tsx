@@ -3,7 +3,7 @@ import React from 'react';
 import { useMutation } from '@apollo/client';
 import { Col, Row } from 'antd';
 import { useForm } from 'antd/es/form/Form';
-import { SIGNUP } from 'apollo/queries/user/auth';
+import { Signup as SignupGQL } from 'apollo/queries/user/auth';
 import { ReactComponent as SignupImage } from 'assets/icons/sign_up.svg';
 import AuthLayout from 'layouts/AuthLayout';
 import { useNavigate } from 'react-router';
@@ -20,7 +20,7 @@ const Signup: React.FC = () => {
   const [form] = useForm();
   const navigate = useNavigate();
 
-  const [handleSignup] = useMutation(SIGNUP);
+  const [handleSignup] = useMutation(SignupGQL);
 
   const onFormSubmit = async ({ name, email, password }: UserSignupPayload) => {
     try {

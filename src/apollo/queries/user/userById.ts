@@ -1,6 +1,6 @@
-import { gql } from '@apollo/client';
+import { graphql } from 'graphql-types';
 
-export const Get_User_By_ID = gql`
+export const GetUser = graphql(/* Grahphql */ `
   query GetUser($userId: String) {
     getUser(id: $userId) {
       id
@@ -15,14 +15,12 @@ export const Get_User_By_ID = gql`
         phoneNumber
         city
         state
-        createdAt
-        updatedAt
       }
     }
   }
-`;
+`);
 
-export const Get_Users_Companies = gql`
+export const GetUsersCompanies = graphql(/* Grahphql */ `
   query GetUserCompanies($userId: String) {
     getUserCompanies(id: $userId) {
       id
@@ -37,4 +35,4 @@ export const Get_Users_Companies = gql`
       slug
     }
   }
-`;
+`);

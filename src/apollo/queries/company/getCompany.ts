@@ -1,6 +1,6 @@
-import { gql } from '@apollo/client';
+import { graphql } from 'graphql-types';
 
-export const Search_Company = gql`
+export const SearchCompany = graphql(/* Grahphql */ `
   query SearchCompany($query: String!) {
     searchCompany(query: $query) {
       id
@@ -15,4 +15,4 @@ export const Search_Company = gql`
       userId
     }
   }
-`;
+`);

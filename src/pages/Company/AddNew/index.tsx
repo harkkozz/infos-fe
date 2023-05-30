@@ -3,7 +3,7 @@ import React from 'react';
 import { useMutation } from '@apollo/client';
 import { Col, Row } from 'antd';
 import { useForm } from 'antd/es/form/Form';
-import { Create_Company } from 'apollo/queries/company/addNewCompany';
+import { CreateCompany } from 'apollo/queries/company/addNewCompany';
 import MainLayout from 'layouts/MainLayout';
 import { toast } from 'react-toastify';
 import { CompanyCreateFormValues } from 'utils/types/company';
@@ -19,7 +19,7 @@ import { inputConfig } from './inputConfig';
 const AddNewCompany: React.FC = () => {
   const { user } = useUserStorage();
   const [form] = useForm();
-  const [handleCreateNewCompany] = useMutation(Create_Company);
+  const [handleCreateNewCompany] = useMutation(CreateCompany);
 
   const handleOnFinish = async ({
     companyName,

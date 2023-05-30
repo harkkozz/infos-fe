@@ -1,15 +1,15 @@
-import { gql } from '@apollo/client';
+import { graphql } from 'graphql-types';
 
-export const LOGIN = gql`
+export const Login = graphql(/* Grahphql */ `
   mutation Login($user: LoginUserInput!) {
     login(user: $user) {
       token
       message
     }
   }
-`;
+`);
 
-export const SIGNUP = gql`
+export const Signup = graphql(/*Graphql */ `
   mutation Signup($user: UserInput!) {
     signup(user: $user) {
       id
@@ -20,4 +20,4 @@ export const SIGNUP = gql`
       updatedAt
     }
   }
-`;
+`);
