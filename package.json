@@ -40,7 +40,7 @@
     "react-toastify": "^9.1.2",
     "sass": "^1.61.0",
     "scss": "^0.2.4",
-    "vite-plugin-svgr": "^2.4.0",
+    "vite-plugin-svgr": "^3.0.0",
     "zustand": "^4.3.7"
   },
   "devDependencies": {
