@@ -21,8 +21,8 @@ dependencies:
     specifier: ^16.6.0
     version: 16.6.0
   i18next:
-    specifier: ^22.4.14
-    version: 22.4.14
+    specifier: ^23.0.0
+    version: 23.0.0
   i18next-browser-languagedetector:
     specifier: ^7.0.1
     version: 7.0.1
@@ -37,7 +37,7 @@ dependencies:
     version: 18.2.0(react@18.2.0)
   react-i18next:
     specifier: ^12.2.0
-    version: 12.2.0(i18next@22.4.14)(react-dom@18.2.0)(react@18.2.0)
+    version: 12.2.0(i18next@23.0.0)(react-dom@18.2.0)(react@18.2.0)
   react-jwt:
     specifier: ^1.1.8
     version: 1.1.8(react@18.2.0)
@@ -851,6 +851,13 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.11
+
+  /@babel/runtime@7.22.6:
+    resolution: {integrity: sha512-wDb5pWm4WDdF6LFUde3Jl8WzPA+3ZbxYqkC6xAXuD3irdEHN1k0NfTRrJD8ZD378SJ61miMLCqIOXYhd8x+AJQ==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      regenerator-runtime: 0.13.11
+    dev: false
 
   /@babel/template@7.21.9:
     resolution: {integrity: sha512-MK0X5k8NKOuWRamiEfc3KEJiHMTkGZNUjzMipqCGDDc6ijRl/B7RGSKVGncu4Ro/HdyzzY6cmoXuKI2Gffk7vQ==}
@@ -4538,10 +4545,10 @@ packages:
       '@babel/runtime': 7.22.3
     dev: false
 
-  /i18next@22.4.14:
-    resolution: {integrity: sha512-VtLPtbdwGn0+DAeE00YkiKKXadkwg+rBUV+0v8v0ikEjwdiJ0gmYChVE4GIa9HXymY6wKapkL93vGT7xpq6aTw==}
+  /i18next@23.0.0:
+    resolution: {integrity: sha512-nwggKtf7ZQWq1t21qGUGhrwoyRWHJNTy016jOPl6ZDfxGZAUyK1FWm3EgELgfO4ujNifCHmxJ6pyDdcX7cagWg==}
     dependencies:
-      '@babel/runtime': 7.22.3
+      '@babel/runtime': 7.22.6
     dev: false
 
   /iconv-lite@0.4.24:
@@ -6275,7 +6282,7 @@ packages:
       react: 18.2.0
       scheduler: 0.23.0
 
-  /react-i18next@12.2.0(i18next@22.4.14)(react-dom@18.2.0)(react@18.2.0):
+  /react-i18next@12.2.0(i18next@23.0.0)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-5XeVgSygaGfyFmDd2WcXvINRw2WEC1XviW1LXY/xLOEMzsCFRwKqfnHN+hUjla8ZipbVJR27GCMSuTr0BhBBBQ==}
     peerDependencies:
       i18next: '>= 19.0.0'
@@ -6290,7 +6297,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.22.3
       html-parse-stringify: 3.0.1
-      i18next: 22.4.14
+      i18next: 23.0.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
