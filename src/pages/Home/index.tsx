@@ -1,15 +1,14 @@
 import React, { useMemo } from 'react';
 
 import { useLazyQuery } from '@apollo/client';
-import { SearchCompany } from 'apollo/queries/company/getCompany';
-import MainLayout from 'layouts/MainLayout';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { debounce } from 'utils/helpers';
 
-import styles from 'pages/Home/Home.module.scss';
-
+import { SearchCompany } from 'apollo/queries/company/getCompany';
 import AsyncTypeahead, { TypeaheadOption } from 'components/AsyncTypeahead';
+import MainLayout from 'layouts/MainLayout';
+import styles from 'pages/Home/Home.module.scss';
+import { debounce } from 'utils/helpers';
 
 const HomePage: React.FC = () => {
   const navigate = useNavigate();
@@ -60,7 +59,7 @@ const HomePage: React.FC = () => {
           defaultOptions={options}
           loadOptions={debounce(handleSearch, 400)}
           onChange={handleSelect}
-          placeholder={t('searchCompany')}
+          placeholder={t('translation:searchCompany')}
         />
       </div>
     </MainLayout>

@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 
 import HomeIcon from '@iconscout/react-unicons/icons/uil-home';
 import { Avatar, Button, Layout } from 'antd';
-import { ReactComponent as Logo } from 'assets/icons/vite.svg';
 import classnames from 'classnames';
 import { useTranslation } from 'react-i18next';
 import { isExpired } from 'react-jwt';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { getNameInitials } from 'utils/helpers';
 
+import { ReactComponent as Logo } from 'assets/icons/vite.svg';
 import { useUserStorage } from 'store/user';
+import { getNameInitials } from 'utils/helpers';
 
 import styles from './Header.module.scss';
 
@@ -19,7 +19,7 @@ interface Props {
 }
 
 const Header: React.FC<Props> = ({ handleOnLoginClick, handleOnSignupClick }) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('translation');
 
   const { token, user, setUser } = useUserStorage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -47,8 +47,8 @@ const Header: React.FC<Props> = ({ handleOnLoginClick, handleOnSignupClick }) =>
         <div className={styles.headerActionsContainer}>
           {!token || isExpired(token) ? (
             <div className={styles.headerContentActions}>
-              <Button onClick={handleOnLoginClick}>{t('login')}</Button>
-              <Button onClick={handleOnSignupClick}>{t('signup')}</Button>
+              <Button onClick={handleOnLoginClick}>{t('translation:login')}</Button>
+              <Button onClick={handleOnSignupClick}>{t('translation:signup')}</Button>
             </div>
           ) : (
             <>
@@ -71,7 +71,7 @@ const Header: React.FC<Props> = ({ handleOnLoginClick, handleOnSignupClick }) =>
                       });
                     }}
                   >
-                    <HomeIcon /> {t('home')}
+                    <HomeIcon /> {t('translation:home')}
                   </NavLink>
                   <NavLink
                     to={`/user/${user.slug}`}
@@ -84,7 +84,7 @@ const Header: React.FC<Props> = ({ handleOnLoginClick, handleOnSignupClick }) =>
                     {user.name}
                   </NavLink>
                   <div className={styles.menuItem}>
-                    <Button onClick={handleLogout}>{t('logout')}</Button>
+                    <Button onClick={handleLogout}>{t('translation:login')}</Button>
                   </div>
                 </div>
               )}
