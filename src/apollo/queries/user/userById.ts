@@ -1,4 +1,4 @@
-import { graphql } from 'graphql-types';
+import { graphql } from 'gql';
 
 export const GetUser = graphql(/* Grahphql */ `
   query GetUser($userId: String) {

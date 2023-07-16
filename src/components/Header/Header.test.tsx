@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import { render, renderHook } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import TestApp from 'testUtils/TestApp';
 import { expect, it, vi } from 'vitest';
 

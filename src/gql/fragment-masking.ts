@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 /* eslint-disable no-redeclare */
 import { DocumentTypeDecoration, ResultOf, TypedDocumentNode } from '@graphql-typed-document-node/core';
 import { FragmentDefinitionNode } from 'graphql';

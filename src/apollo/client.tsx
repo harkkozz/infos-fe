@@ -6,7 +6,7 @@ import {
   InMemoryCache,
   NormalizedCacheObject
 } from '@apollo/client';
-import { Company } from 'graphql-types/graphql';
+import { Company } from 'gql/graphql';
 
 export const createClient = () => {
   const cache = new InMemoryCache({
