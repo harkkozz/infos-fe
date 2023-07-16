@@ -25,13 +25,12 @@ Open http://localhost:3000 in your browser
 
 In the project directory, you can run:
 
-npm run start: Starts the development server
-npm run build: Builds the app for production
-npm run preview: Serves the production build locally for previewing
-npm run format: Formats the code using Prettier
-npm run lint: Lints the code using ESLint
-npm run lint:tsc: Checks for type errors using TypeScript
-npm run lint:staged: Runs Prettier and ESLint on staged files using lint-staged
+pnpm start: Starts the development server
+pnpm run build: Builds the app for production
+pnpm run preview: Serves the production build locally for previewing
+pnpm run format: Formats the code using Prettier
+pnpm run lint: Lints the code using ESLint
+pnpm run lint:tsc: Checks for type errors using TypeScript
 
 ## License
 
