@@ -16,6 +16,8 @@ import * as types from './graphql';
 const documents = {
   '\n  mutation CreateCompany($company: CompanyInput!) {\n    createCompany(company: $company) {\n      id\n    }\n  }\n':
     types.CreateCompanyDocument,
+  '\n  mutation DeleteCompany($id: String!) {\n    deleteCompany(id: $id) {\n      id\n      companyName\n    }\n  }\n':
+    types.DeleteCompanyDocument,
   '\n  query SearchCompany($query: String!) {\n    searchCompany(query: $query) {\n      id\n      companyName\n      email\n      phoneNumber\n      city\n      slug\n      state\n      createdAt\n      updatedAt\n      userId\n    }\n  }\n':
     types.SearchCompanyDocument,
   '\n  query GetCompanyById($id: String!) {\n    getCompanyById(id: $id) {\n      id\n      companyName\n      email\n      areaCode\n      phoneNumber\n      city\n      slug\n      state\n      createdAt\n      updatedAt\n      userId\n    }\n  }\n':
@@ -52,6 +54,12 @@ export function graphql(source: string): unknown;
 export function graphql(
   source: '\n  mutation CreateCompany($company: CompanyInput!) {\n    createCompany(company: $company) {\n      id\n    }\n  }\n'
 ): (typeof documents)['\n  mutation CreateCompany($company: CompanyInput!) {\n    createCompany(company: $company) {\n      id\n    }\n  }\n'];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(
+  source: '\n  mutation DeleteCompany($id: String!) {\n    deleteCompany(id: $id) {\n      id\n      companyName\n    }\n  }\n'
+): (typeof documents)['\n  mutation DeleteCompany($id: String!) {\n    deleteCompany(id: $id) {\n      id\n      companyName\n    }\n  }\n'];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

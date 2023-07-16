@@ -1,4 +1,4 @@
-import { graphql } from 'graphql-types';
+import { graphql } from 'gql';
 
 export const CreateCompany = graphql(/* Grahphql */ `
   mutation CreateCompany($company: CompanyInput!) {

@@ -42,6 +42,12 @@ export type CompanyInput = {
   userId: Scalars['String']['input'];
 };
 
+export type DeletedCompany = {
+  __typename?: 'DeletedCompany';
+  companyName?: Maybe<Scalars['String']['output']>;
+  id: Scalars['ID']['output'];
+};
+
 export type LoginUserInput = {
   email: Scalars['String']['input'];
   password: Scalars['String']['input'];
@@ -50,6 +56,7 @@ export type LoginUserInput = {
 export type Mutation = {
   __typename?: 'Mutation';
   createCompany: Company;
+  deleteCompany?: Maybe<DeletedCompany>;
   editCompany: Company;
   login?: Maybe<PayloadAuthUser>;
   signup?: Maybe<User>;
@@ -57,6 +64,10 @@ export type Mutation = {
 
 export type MutationCreateCompanyArgs = {
   company: CompanyInput;
+};
+
+export type MutationDeleteCompanyArgs = {
+  id: Scalars['String']['input'];
 };
 
 export type MutationEditCompanyArgs = {
@@ -125,6 +136,15 @@ export type CreateCompanyMutationVariables = Exact<{
 }>;
 
 export type CreateCompanyMutation = { __typename?: 'Mutation'; createCompany: { __typename?: 'Company'; id: string } };
+
+export type DeleteCompanyMutationVariables = Exact<{
+  id: Scalars['String']['input'];
+}>;
+
+export type DeleteCompanyMutation = {
+  __typename?: 'Mutation';
+  deleteCompany?: { __typename?: 'DeletedCompany'; id: string; companyName?: string | null } | null;
+};
 
 export type SearchCompanyQueryVariables = Exact<{
   query: Scalars['String']['input'];
@@ -297,6 +317,46 @@ export const CreateCompanyDocument = {
     }
   ]
 } as unknown as DocumentNode<CreateCompanyMutation, CreateCompanyMutationVariables>;
+export const DeleteCompanyDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'mutation',
+      name: { kind: 'Name', value: 'DeleteCompany' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'id' } },
+          type: { kind: 'NonNullType', type: { kind: 'NamedType', name: { kind: 'Name', value: 'String' } } }
+        }
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'deleteCompany' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'id' },
+                value: { kind: 'Variable', name: { kind: 'Name', value: 'id' } }
+              }
+            ],
+            selectionSet: {
+              kind: 'SelectionSet',
+              selections: [
+                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'companyName' } }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+} as unknown as DocumentNode<DeleteCompanyMutation, DeleteCompanyMutationVariables>;
 export const SearchCompanyDocument = {
   kind: 'Document',
   definitions: [

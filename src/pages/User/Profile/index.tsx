@@ -1,12 +1,14 @@
 import React, { useMemo, useState } from 'react';
 
-import { useQuery } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 import TrashIcon from '@iconscout/react-unicons/icons/uil-trash-alt';
 import { Button, Modal } from 'antd';
 import { ColumnsType } from 'antd/es/table';
+import { DeleteCompany } from 'apollo/queries/company/deleteCompany';
 import { GetUsersCompanies } from 'apollo/queries/user/userById';
 import MainLayout from 'layouts/MainLayout';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import type { Company } from 'utils/types/company';
 
 import { useUserStorage } from 'store/user';
@@ -21,7 +23,8 @@ const UserProfile: React.FC = () => {
   const [openModal, setOpenModal] = useState(false);
   const [selectedCompany, setSelectedCompany] = useState<Partial<Company>>({});
 
-  const { data, loading, error } = useQuery(GetUsersCompanies, { variables: { userId: user.id } });
+  const { data, loading, error, refetch } = useQuery(GetUsersCompanies, { variables: { userId: user.id } });
+  const [handleDeleteCompany] = useMutation(DeleteCompany);
 
   const handleOpenModal = () => {
     setOpenModal(true);
@@ -30,6 +33,7 @@ const UserProfile: React.FC = () => {
   const handleCloseModal = () => {
     setOpenModal(false);
   };
+
   const columns: ColumnsType<any> = useMemo(
     () => [
       {
@@ -112,7 +116,12 @@ const UserProfile: React.FC = () => {
         <Modal
           title="Confirmation dialog"
           open={openModal}
-          onOk={handleCloseModal}
+          onOk={async () => {
+            await handleDeleteCompany({ variables: { id: selectedCompany.id } });
+            toast.success(`Successfully deleted ${selectedCompany.companyName}`);
+            handleCloseModal();
+            refetch({ userId: user.id });
+          }}
           confirmLoading={false}
           onCancel={handleCloseModal}
         >

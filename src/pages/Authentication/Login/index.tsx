@@ -19,26 +19,24 @@ import CustomForm from 'components/CustomForm';
 import { inputConfig } from './inputConfig';
 
 const Login: React.FC = () => {
-  const { user, setUser } = useUserStorage();
+  const { setUser } = useUserStorage();
   const [form] = useForm();
   const navigate = useNavigate();
 
   const [handleLogin] = useMutation(LoginGQL);
 
   const onFormSubmit = async ({ email, password }: UserLoginPayload) => {
-    try {
-      await handleLogin({
-        variables: { user: { email, password } },
-        onCompleted: (data) => {
-          setUser(data?.login?.token);
-        }
-      });
+    await handleLogin({
+      variables: { user: { email, password } },
+      onCompleted: (data) => {
+        setUser(data?.login?.token);
 
-      toast.success(`Welcome ${user.name}`);
-      navigate({ pathname: '/' });
-    } catch (error) {
-      if (error instanceof Error) toast.error(error.cause as string);
-    }
+        navigate({ pathname: '/' });
+      },
+      onError: ({ networkError }: any) => {
+        toast.error(networkError.result?.errors[0]?.message);
+      }
+    });
   };
 
   return (

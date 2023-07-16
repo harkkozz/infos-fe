@@ -31,13 +31,16 @@ const AddNewCompany: React.FC = () => {
   }: CompanyCreateFormValues) => {
     try {
       await handleCreateNewCompany({
+        errorPolicy: 'all',
         variables: {
           company: { companyName, city, email, areaCode, phoneNumber, state, userId: user.id }
         }
       });
       toast.success('Company created');
-    } catch (error) {
-      if (error instanceof Error) toast.error(error.cause as string);
+    } catch (err) {
+      if (err instanceof Error) {
+        toast.error(err.message);
+      }
     }
   };
 

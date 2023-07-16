@@ -1,4 +1,4 @@
-import { graphql } from 'graphql-types';
+import { graphql } from 'gql';
 
 export const GetCompanyById = graphql(/* Grahphql */ `
   query GetCompanyById($id: String!) {

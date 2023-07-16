@@ -1,4 +1,4 @@
-import { graphql } from 'graphql-types';
+import { graphql } from 'gql';
 
 export const EditCompany = graphql(/* Grahphql */ `
   mutation EditCompany($id: String!, $company: CompanyInput!) {

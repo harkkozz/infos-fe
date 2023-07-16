@@ -19,7 +19,7 @@ const MainRouter: React.FC<React.PropsWithChildren> = () => {
   return (
     <Routes>
       <Route path="*" element={<NotFoundPage />} />
-      <Route element={<HomePage />} errorElement={<div>Error</div>} path={HOME_PAGE} />
+      <Route element={<HomePage />} path={HOME_PAGE} />
       <Route path="company/:slug" element={<CompanyProfile />} />
       <Route element={<PrivateOutlet />}>
         <Route path="user/:slug" element={<UserProfile />} />
