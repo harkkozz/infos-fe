@@ -1,14 +1,15 @@
+@import '../../styles/mixins.scss';
+
 .notFoundPage {
   display: flex;
-  font-family: 'Roboto-Medium', sans-serif;
+  @include font16;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
 
   button {
-    font-family: 'Roboto-Medium', sans-serif;
-    font-size: 20px;
+    @include font16Bold;
   }
 }
 

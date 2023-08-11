@@ -1,9 +1,17 @@
-@mixin fontRegular16 {
-  font-family: Roboto-Regular;
-  font-size: 16px;
+@mixin font16 {
+  font:
+    normal 400 1rem Inter,
+    sans-serif;
 }
 
-@mixin fontMedium20 {
-  font-family: Roboto-Medium;
-  font-size: 20px;
+@mixin font16SemiBold {
+  font:
+    normal 600 1rem Inter,
+    sans-serif;
+}
+
+@mixin font16Bold {
+  font:
+    normal bold 1rem Inter,
+    sans-serif;
 }

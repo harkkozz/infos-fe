@@ -4,18 +4,16 @@ import { useMutation, useQuery } from '@apollo/client';
 import TrashIcon from '@iconscout/react-unicons/icons/uil-trash-alt';
 import { Button, Modal } from 'antd';
 import { ColumnsType } from 'antd/es/table';
-import { DeleteCompany } from 'apollo/queries/company/deleteCompany';
-import { GetUsersCompanies } from 'apollo/queries/user/userById';
-import MainLayout from 'layouts/MainLayout';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import type { Company } from 'utils/types/company';
 
-import { useUserStorage } from 'store/user';
-
-import styles from 'pages/User/Profile/Profile.module.scss';
-
+import { DeleteCompany } from 'apollo/queries/company/deleteCompany';
+import { GetUsersCompanies } from 'apollo/queries/user/userById';
 import CustomTable from 'components/CustomTable';
+import MainLayout from 'layouts/MainLayout';
+import styles from 'pages/User/Profile/Profile.module.scss';
+import { useUserStorage } from 'store/user';
+import type { Company } from 'utils/types/company';
 
 const UserProfile: React.FC = () => {
   const { user } = useUserStorage();
@@ -69,7 +67,7 @@ const UserProfile: React.FC = () => {
         render: (_, record) => {
           return (
             <div className={styles.tableActionCell}>
-              <Link to={`/company/${record.slug}`}>View {record.name}</Link>
+              <Link to={`/company/${record.slug}/${record.id}`}>View {record.name}</Link>
               <Link to={`/company/${record.slug}/edit/${record.id}`}>Edit {record.name}</Link>
               <div className={styles.trashIconWrapper}>
                 <TrashIcon

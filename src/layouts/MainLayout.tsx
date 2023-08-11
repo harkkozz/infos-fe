@@ -10,17 +10,14 @@ import styles from './MainLayout.module.scss';
 
 const { Content } = Layout;
 
-interface Props {
-  hasFooter?: boolean;
-}
-const MainLayout: React.FC<React.PropsWithChildren<Props>> = ({ children, hasFooter = false }) => {
+const MainLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
   const navigate = useNavigate();
 
   return (
     <Layout className={styles.layout}>
       <Header handleOnLoginClick={() => navigate('/login')} handleOnSignupClick={() => navigate('/signup')} />
       <Content className={styles.siteLayoutContent}>{children}</Content>
-      {hasFooter && <Footer />}
+      <Footer />
     </Layout>
   );
 };

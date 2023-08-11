@@ -2,11 +2,12 @@
 @import '../../styles/mixins';
 
 .header {
-  @include fontMedium20;
+  @include font16Bold;
   display: flex;
   align-items: center;
   padding: 1rem;
   background-color: $white;
+  flex: 1;
 }
 
 .headerContent {
@@ -31,7 +32,8 @@
 }
 
 .avatar {
-  font-family: Roboto-Bold;
+  @include font16SemiBold;
+  line-height: 2.375rem;
   cursor: pointer;
   background-color: $primary;
   position: relative;
@@ -45,8 +47,7 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  font-family: Roboto-Regular;
-  font-size: 16px;
+  @include font16;
   right: 1%;
   top: 8%;
   border-top: 3px solid $primary;
