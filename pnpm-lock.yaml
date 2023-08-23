@@ -122,8 +122,8 @@ devDependencies:
     specifier: ^4.6.0
     version: 4.6.0(eslint@8.45.0)
   eslint-plugin-sonarjs:
-    specifier: ^0.20.0
-    version: 0.20.0(eslint@8.45.0)
+    specifier: ^0.21.0
+    version: 0.21.0(eslint@8.45.0)
   happy-dom:
     specifier: ^10.3.2
     version: 10.3.2
@@ -5091,8 +5091,8 @@ packages:
       string.prototype.matchall: 4.0.8
     dev: true
 
-  /eslint-plugin-sonarjs@0.20.0(eslint@8.45.0):
-    resolution: {integrity: sha512-BRhZ7BY/oTr6DDaxvx58ReTg7R+J8T+Y2ZVGgShgpml25IHBTIG7EudUtHuJD1zhtMgUEt59x3VNvUQRo2LV6w==}
+  /eslint-plugin-sonarjs@0.21.0(eslint@8.45.0):
+    resolution: {integrity: sha512-oezUDfFT5S6j3rQheZ4DLPrbetPmMS7zHIKWGHr0CM3g5JgyZroz1FpIKa4jV83NsGpmgIeagpokWDKIJzRQmw==}
     engines: {node: '>=14'}
     peerDependencies:
       eslint: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
