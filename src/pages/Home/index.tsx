@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom';
 import { SearchCompany } from 'apollo/queries/company/getCompany';
 import AsyncTypeahead, { TypeaheadOption } from 'components/AsyncTypeahead';
 import MainLayout from 'layouts/MainLayout';
-import styles from 'pages/Home/Home.module.scss';
 import { debounce } from 'utils/helpers';
 
 const HomePage: React.FC = () => {
@@ -52,16 +51,13 @@ const HomePage: React.FC = () => {
   }
 
   return (
-    <MainLayout hasFooter>
-      <div className={styles.asyncTypeaheadWrapper}>
-        <AsyncTypeahead
-          selectContainerClass={styles.selectContainer}
-          defaultOptions={options}
-          loadOptions={debounce(handleSearch, 400)}
-          onChange={handleSelect}
-          placeholder={t('translation:searchCompany')}
-        />
-      </div>
+    <MainLayout>
+      <AsyncTypeahead
+        defaultOptions={options}
+        loadOptions={debounce(handleSearch, 400)}
+        onChange={handleSelect}
+        placeholder={t('translation:searchCompany')}
+      />
     </MainLayout>
   );
 };

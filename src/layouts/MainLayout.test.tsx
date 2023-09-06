@@ -16,7 +16,7 @@ describe('Main Layout', () => {
   });
 
   it('should match snapshot with footer', () => {
-    const { baseElement } = render(<MainLayout hasFooter />, { wrapper: BrowserRouter });
+    const { baseElement } = render(<MainLayout />, { wrapper: BrowserRouter });
 
     expect(baseElement).toMatchSnapshot();
   });

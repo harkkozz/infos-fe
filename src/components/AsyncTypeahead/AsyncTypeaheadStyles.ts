@@ -3,13 +3,20 @@ export const typeaheadStyles = {
     ...provided
   }),
   container: (provided: any) => ({
-    ...provided
+    ...provided,
+    width: 'calc(100vw - 1rem)',
+    '@media only screen and (min-width: 600px)': {
+      width: '30rem'
+    },
+
+    '@media only screen and (min-width: 900px)': {
+      width: '40rem'
+    }
   }),
   control: (provided: any, state: any) => ({
     ...provided,
     boxShadow: 'none',
-    padding: '0 10px',
-    height: '38px',
+    padding: '0 0.5rem',
     backgroundColor: 'transparent',
     '&:hover': {
       color: '#0077be'
@@ -55,8 +62,7 @@ export const typeaheadStyles = {
     ...provided,
     borderTop: '3px solid #0077be',
     borderRadius: '0',
-    padding: '20px 0',
-    width: '100%',
+    padding: '1rem 0',
     boxShadow: '0 2px 6px 0 rgba(0, 0, 0, 0.08)'
   }),
   menuList: (provided: any) => ({
@@ -87,7 +93,7 @@ export const typeaheadStyles = {
     color: '#1e232a',
     backgroundPosition: '95% 5px',
     backgroundRepeat: 'no-repeat',
-    font: 'normal 400 14px "Roboto-Regular", sans-serif',
+    font: 'normal 400 1rem Inter, sans-serif',
     padding: '10px 50px 10px 14px',
     cursor: 'pointer',
     whiteSpace: 'nowrap',
@@ -100,7 +106,7 @@ export const typeaheadStyles = {
   }),
   singleValue: (provided: any) => ({
     ...provided,
-    font: 'normal 400 14px "Roboto-Regular", sans-serif',
+    font: 'normal 400 1rem Inter, sans-serif',
     margin: '0',
     padding: '0',
     color: 'inherit'

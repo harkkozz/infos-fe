@@ -3,16 +3,15 @@ import React from 'react';
 import { useMutation } from '@apollo/client';
 import { Col, Row } from 'antd';
 import { useForm } from 'antd/es/form/Form';
-import { CreateCompany } from 'apollo/queries/company/addNewCompany';
-import MainLayout from 'layouts/MainLayout';
+import { useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
-import { CompanyCreateFormValues } from 'utils/types/company';
 
-import { useUserStorage } from 'store/user';
-
-import styles from 'pages/Company/AddNew/AddNew.module.scss';
-
+import { CreateCompany } from 'apollo/queries/company/addNewCompany';
 import CustomForm from 'components/CustomForm';
+import MainLayout from 'layouts/MainLayout';
+import styles from 'pages/Company/AddNew/AddNew.module.scss';
+import { useUserStorage } from 'store/user';
+import { CompanyCreateFormValues } from 'utils/types/company';
 
 import { inputConfig } from './inputConfig';
 
@@ -20,6 +19,7 @@ const AddNewCompany: React.FC = () => {
   const { user } = useUserStorage();
   const [form] = useForm();
   const [handleCreateNewCompany] = useMutation(CreateCompany);
+  const navigate = useNavigate();
 
   const handleOnFinish = async ({
     companyName,
@@ -36,6 +36,7 @@ const AddNewCompany: React.FC = () => {
           company: { companyName, city, email, areaCode, phoneNumber, state, userId: user.id }
         }
       });
+      navigate(`/user/${user.slug}`);
       toast.success('Company created');
     } catch (err) {
       if (err instanceof Error) {
