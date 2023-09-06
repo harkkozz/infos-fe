@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { render } from '@testing-library/react';
-import TestApp from 'testUtils/TestApp';
 import { expect, it } from 'vitest';
 
 import Spinner from 'components/Spinner';
+import TestApp from 'testUtils/TestApp';
 
 it('should match snapshot', () => {
   const { baseElement } = render(

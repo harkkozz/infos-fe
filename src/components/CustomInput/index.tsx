@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Input, InputProps } from 'antd';
+
 import { InputType } from 'utils/types/input/input';
 
 interface Props extends InputProps {

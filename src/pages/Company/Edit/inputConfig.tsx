@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Form, Select } from 'antd';
+
 import { InputConfig } from 'utils/types/input/input';
 
 export const inputConfig: InputConfig[] = [

@@ -3,16 +3,15 @@ import React from 'react';
 import { useMutation } from '@apollo/client';
 import { Col, Row } from 'antd';
 import { useForm } from 'antd/es/form/Form';
-import { Signup as SignupGQL } from 'apollo/queries/user/auth';
-import { ReactComponent as SignupImage } from 'assets/icons/sign_up.svg';
-import AuthLayout from 'layouts/AuthLayout';
 import { useNavigate } from 'react-router';
 import { toast } from 'react-toastify';
-import { UserSignupPayload } from 'utils/types/user';
 
-import styles from 'pages/Authentication/Authentication.module.scss';
-
+import { Signup as SignupGQL } from 'apollo/queries/user/auth';
+import { ReactComponent as SignupImage } from 'assets/icons/sign_up.svg';
 import CustomForm from 'components/CustomForm';
+import AuthLayout from 'layouts/AuthLayout';
+import styles from 'pages/Authentication/Authentication.module.scss';
+import { UserSignupPayload } from 'utils/types/user';
 
 import { inputConfig } from './inputConfig';
 

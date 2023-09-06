@@ -3,9 +3,9 @@ import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { setup as i18nSetup } from 'utils/translations/setup';
 
 import Spinner from 'components/Spinner';
+import { setup as i18nSetup } from 'utils/translations/setup';
 
 import App from './App';
 import './index.css';

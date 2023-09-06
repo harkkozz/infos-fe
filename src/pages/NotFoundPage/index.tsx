@@ -1,8 +1,9 @@
 import React from 'react';
 
 import { Button } from 'antd';
-import { ReactComponent as NotFound } from 'assets/icons/page_not_found.svg';
 import { useNavigate } from 'react-router-dom';
+
+import { ReactComponent as NotFound } from 'assets/icons/page_not_found.svg';
 
 import styles from './NotFoundPage.module.scss';
 

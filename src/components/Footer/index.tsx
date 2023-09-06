@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Layout } from 'antd';
+
 import { ReactComponent as BuildingsOneImage } from 'assets/icons/best_place.svg';
 import { ReactComponent as BuildingsTwoImage } from 'assets/icons/city_life.svg';
 import { ReactComponent as BuildingsThreeImage } from 'assets/icons/town.svg';

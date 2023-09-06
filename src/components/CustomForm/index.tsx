@@ -3,9 +3,9 @@ import React from 'react';
 import { Button, Form } from 'antd';
 import { FormProps } from 'antd/es/form/Form';
 import { Store as FormFieldValues } from 'antd/es/form/interface';
-import { InputConfig } from 'utils/types/input/input';
 
 import CustomInput from 'components/CustomInput';
+import { InputConfig } from 'utils/types/input/input';
 
 interface Props extends FormProps {
   inputFields: InputConfig[];

@@ -2,16 +2,15 @@ import React, { useMemo } from 'react';
 
 import { useMutation, useQuery } from '@apollo/client';
 import { Col, Row } from 'antd';
-import { GetCompanyById } from 'apollo/queries/company/getCompanyById';
-import { EditCompany } from 'apollo/queries/company/updateCompany';
-import MainLayout from 'layouts/MainLayout';
 import { useParams } from 'react-router';
 import { toast } from 'react-toastify';
-import { Company } from 'utils/types/company';
 
-import { useUserStorage } from 'store/user';
-
+import { GetCompanyById } from 'apollo/queries/company/getCompanyById';
+import { EditCompany } from 'apollo/queries/company/updateCompany';
 import CustomForm from 'components/CustomForm';
+import MainLayout from 'layouts/MainLayout';
+import { useUserStorage } from 'store/user';
+import { Company } from 'utils/types/company';
 
 import { inputConfig } from './inputConfig';
 

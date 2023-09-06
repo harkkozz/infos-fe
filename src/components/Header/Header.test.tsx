@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { render } from '@testing-library/react';
-import TestApp from 'testUtils/TestApp';
 import { expect, it, vi } from 'vitest';
 
 import Header from 'components/Header';
+import TestApp from 'testUtils/TestApp';
 
 const mockHandleOnLoginClick = vi.fn();
 const mockHandleOnSignupClick = vi.fn();

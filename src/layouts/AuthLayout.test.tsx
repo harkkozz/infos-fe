@@ -1,8 +1,9 @@
 import React from 'react';
 
 import { render } from '@testing-library/react';
-import TestApp from 'testUtils/TestApp';
 import { describe, expect, it } from 'vitest';
+
+import TestApp from 'testUtils/TestApp';
 
 import AuthLayout from './AuthLayout';
 
