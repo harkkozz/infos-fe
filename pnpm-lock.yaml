@@ -84,7 +84,7 @@ devDependencies:
     version: 14.0.0(react-dom@18.2.0)(react@18.2.0)
   '@trivago/prettier-plugin-sort-imports':
     specifier: ^4.2.0
-    version: 4.2.0(prettier@3.0.3)
+    version: 4.2.0(prettier@3.3.3)
   '@types/react':
     specifier: ^18.2.15
     version: 18.2.15
@@ -134,8 +134,8 @@ devDependencies:
     specifier: ^14.0.0
     version: 14.0.0
   prettier:
-    specifier: 3.0.3
-    version: 3.0.3
+    specifier: 3.3.3
+    version: 3.3.3
   ts-node:
     specifier: ^10.9.1
     version: 10.9.1(@types/node@20.11.20)(typescript@5.1.6)
@@ -3379,7 +3379,7 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: true
 
-  /@trivago/prettier-plugin-sort-imports@4.2.0(prettier@3.0.3):
+  /@trivago/prettier-plugin-sort-imports@4.2.0(prettier@3.3.3):
     resolution: {integrity: sha512-YBepjbt+ZNBVmN3ev1amQH3lWCmHyt5qTbLCp/syXJRu/Kw2koXh44qayB1gMRxcL/gV8egmjN5xWSrYyfUtyw==}
     peerDependencies:
       '@vue/compiler-sfc': 3.x
@@ -3394,7 +3394,7 @@ packages:
       '@babel/types': 7.17.0
       javascript-natural-sort: 0.7.1
       lodash: 4.17.21
-      prettier: 3.0.3
+      prettier: 3.3.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7124,8 +7124,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier@3.0.3:
-    resolution: {integrity: sha512-L/4pUDMxcNa8R/EthV08Zt42WBO4h1rarVtK0K+QJG0X187OLo7l699jWw0GKuwzkPQ//jMFA/8Xm6Fh3J/DAg==}
+  /prettier@3.3.3:
+    resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
