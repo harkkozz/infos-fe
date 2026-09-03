@@ -104,8 +104,8 @@ devDependencies:
     specifier: ^0.33.0
     version: 0.33.0(vitest@0.34.0)
   '@vitest/ui':
-    specifier: ^0.34.0
-    version: 0.34.0(vitest@0.34.0)
+    specifier: ^5.0.0
+    version: 5.0.0(vitest@0.34.0)
   c8:
     specifier: ^8.0.0
     version: 8.0.0
@@ -159,7 +159,7 @@ devDependencies:
     version: 4.2.0(typescript@5.1.6)(vite@4.5.2)
   vitest:
     specifier: ^0.34.0
-    version: 0.34.0(@vitest/ui@0.34.0)(happy-dom@11.0.1)(sass@1.63.6)
+    version: 0.34.0(@vitest/ui@5.0.0)(happy-dom@11.0.1)(sass@1.63.6)
 
 packages:
 
@@ -3092,8 +3092,8 @@ packages:
       webcrypto-core: 1.7.7
     dev: true
 
-  /@polka/url@1.0.0-next.21:
-    resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
+  /@polka/url@1.0.0-next.29:
+    resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
     dev: true
 
   /@rc-component/color-picker@1.4.1(react-dom@18.2.0)(react@18.2.0):
@@ -3810,7 +3810,7 @@ packages:
       magic-string: 0.30.2
       picocolors: 1.0.0
       std-env: 3.3.3
-      vitest: 0.34.0(@vitest/ui@0.34.0)(happy-dom@11.0.1)(sass@1.63.6)
+      vitest: 0.34.0(@vitest/ui@5.0.0)(happy-dom@11.0.1)(sass@1.63.6)
     dev: true
 
   /@vitest/expect@0.34.0:
@@ -3819,6 +3819,12 @@ packages:
       '@vitest/spy': 0.34.0
       '@vitest/utils': 0.34.0
       chai: 4.3.7
+    dev: true
+
+  /@vitest/pretty-format@5.0.0:
+    resolution: {integrity: sha512-PVRNuB3wpReb4SQEs4zTKM4KWFhQ5pw3spE8naoDJNB5T5aWRzGKHwXcLUllr0WeOTXpB6bSr3CJLo5+7XQSSQ==}
+    dependencies:
+      tinyrainbow: 3.1.1
     dev: true
 
   /@vitest/runner@0.34.0:
@@ -3843,19 +3849,18 @@ packages:
       tinyspy: 2.1.1
     dev: true
 
-  /@vitest/ui@0.34.0(vitest@0.34.0):
-    resolution: {integrity: sha512-+MPvbOiKrOWm1JL8hfROybzTB0Y6gWbMCQZlEI67M1+a1iTjaowXTeYSN4pGu0SubeGJw0JTrZ/Z/sRLmb9wLw==}
+  /@vitest/ui@5.0.0(vitest@0.34.0):
+    resolution: {integrity: sha512-h2FIFwggCY2GxUd2UdQoYNVQkOIqEQLPhNREcl3FUiRsdzQep7NWwYbSmhGEA9nFLPDq5pXzRMcBZQU8Py83sg==}
     peerDependencies:
-      vitest: '>=0.30.1 <1'
+      vitest: 5.0.0
     dependencies:
-      '@vitest/utils': 0.34.0
-      fast-glob: 3.3.1
-      fflate: 0.8.0
-      flatted: 3.2.7
-      pathe: 1.1.1
-      picocolors: 1.0.0
-      sirv: 2.0.3
-      vitest: 0.34.0(@vitest/ui@0.34.0)(happy-dom@11.0.1)(sass@1.63.6)
+      '@vitest/utils': 5.0.0
+      fflate: 0.8.3
+      flatted: 3.4.4
+      pathe: 2.0.3
+      sirv: 3.0.2
+      tinyrainbow: 3.1.1
+      vitest: 0.34.0(@vitest/ui@5.0.0)(happy-dom@11.0.1)(sass@1.63.6)
     dev: true
 
   /@vitest/utils@0.34.0:
@@ -3864,6 +3869,14 @@ packages:
       diff-sequences: 29.4.3
       loupe: 2.3.6
       pretty-format: 29.6.2
+    dev: true
+
+  /@vitest/utils@5.0.0:
+    resolution: {integrity: sha512-dO++xL3vDfvhTAVimfkuQUA3k+JClIF1i1vAkPqpcGAthRmeWnXmHB7YPViPvgCwviX8u7Y5W1u2N//AaQr3fw==}
+    dependencies:
+      '@vitest/pretty-format': 5.0.0
+      convert-source-map: 2.0.0
+      tinyrainbow: 3.1.1
     dev: true
 
   /@whatwg-node/events@0.0.3:
@@ -5602,8 +5615,8 @@ packages:
       - encoding
     dev: true
 
-  /fflate@0.8.0:
-    resolution: {integrity: sha512-FAdS4qMuFjsJj6XHbBaZeXOgaypXp8iw/Tpyuq/w3XA41jjLHT8NPA+n7czH/DDhdncq0nAyDZmPeWXh2qmdIg==}
+  /fflate@0.8.3:
+    resolution: {integrity: sha512-tbZNuJrLwGUp3zshBtdy4W+ORxZuIh8a5ilyIEQDC5rY1f3U20JMry0Ll3WBzU58EZKsEuJFXhb5gwv8CsPvgA==}
     dev: true
 
   /figures@3.2.0:
@@ -5656,6 +5669,10 @@ packages:
 
   /flatted@3.2.7:
     resolution: {integrity: sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==}
+    dev: true
+
+  /flatted@3.4.4:
+    resolution: {integrity: sha512-5+ybhBZANEJxaH3X5evAFatUxLfEHSr7n6kYJ+1Qd0mUqr4eu9gIf6GDbWHf8RJijHrjjO8G+la14SlL2SeS1Q==}
     dev: true
 
   /for-each@0.3.3:
@@ -6727,8 +6744,8 @@ packages:
       ufo: 1.2.0
     dev: true
 
-  /mrmime@1.0.1:
-    resolution: {integrity: sha512-hzzEagAgDyoU1Q6yg5uI+AorQgdvMCur3FcKf7NhMKWsaYg+RnbTyHRa/9IlLF9rf455MOCtcqqrQQ83pPP7Uw==}
+  /mrmime@2.0.1:
+    resolution: {integrity: sha512-Y3wQdFg2Va6etvQ5I82yUhGdsKrcYox6p7FfL1LbK2J4V01F9TGlepTIhnK24t7koZibmg82KGglhA1XK5IsLQ==}
     engines: {node: '>=10'}
     dev: true
 
@@ -7082,6 +7099,10 @@ packages:
 
   /pathe@1.1.1:
     resolution: {integrity: sha512-d+RQGp0MAYTIaDBIMmOfMwz3E+LOZnxx1HZd5R18mmCZY0QBlK0LDZfPc8FW8Ed2DlvsuE6PRjroDY+wg4+j/Q==}
+    dev: true
+
+  /pathe@2.0.3:
+    resolution: {integrity: sha512-WUjGcAqP1gQacoQe+OBJsFA7Ld4DyXuUIjZ5cc75cLHvJ7dtNsTugphxIADwspS+AraAUePCKrSVtPLFj/F88w==}
     dev: true
 
   /pathval@1.1.1:
@@ -8173,12 +8194,12 @@ packages:
     resolution: {integrity: sha512-6+eerH9fEnNmi/hyM1DXcRK3pWdoMQtlkQ+ns0ntzunjKqp5i3sKCc80ym8Fib3iaYhdJUOPdhlJWj1tvge2Ww==}
     dev: true
 
-  /sirv@2.0.3:
-    resolution: {integrity: sha512-O9jm9BsID1P+0HOi81VpXPoDxYP374pkOLzACAoyUQ/3OUVndNpsz6wMnY2z+yOxzbllCKZrM+9QrWsv4THnyA==}
-    engines: {node: '>= 10'}
+  /sirv@3.0.2:
+    resolution: {integrity: sha512-2wcC/oGxHis/BoHkkPwldgiPSYcpZK3JU28WoMVv55yHJgcZ8rlXvuG9iZggz+sU1d4bRgIGASwyWqjxu3FM0g==}
+    engines: {node: '>=18'}
     dependencies:
-      '@polka/url': 1.0.0-next.21
-      mrmime: 1.0.1
+      '@polka/url': 1.0.0-next.29
+      mrmime: 2.0.1
       totalist: 3.0.1
     dev: true
 
@@ -8436,6 +8457,11 @@ packages:
 
   /tinypool@0.7.0:
     resolution: {integrity: sha512-zSYNUlYSMhJ6Zdou4cJwo/p7w5nmAH17GRfU/ui3ctvjXFErXXkruT4MWW6poDeXgCaIBlGLrfU6TbTXxyGMww==}
+    engines: {node: '>=14.0.0'}
+    dev: true
+
+  /tinyrainbow@3.1.1:
+    resolution: {integrity: sha512-yau8yJdTt989Mm0Bd/236QnzEiPf2xLLTqUZRUJOo/3CB078LSwzei343DgtJVmfJKJE3TMINY1u42SQsP6mXw==}
     engines: {node: '>=14.0.0'}
     dev: true
 
@@ -8955,7 +8981,7 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitest@0.34.0(@vitest/ui@0.34.0)(happy-dom@11.0.1)(sass@1.63.6):
+  /vitest@0.34.0(@vitest/ui@5.0.0)(happy-dom@11.0.1)(sass@1.63.6):
     resolution: {integrity: sha512-8Pnc1fVt1P6uBncdUZ++hgiJGgxIRKuz4bmS/PQziaEcUj0D1g9cGiR1MbLrcsvFTC6fgrqDhYoTAdBG356WMA==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -8993,7 +9019,7 @@ packages:
       '@vitest/runner': 0.34.0
       '@vitest/snapshot': 0.34.0
       '@vitest/spy': 0.34.0
-      '@vitest/ui': 0.34.0(vitest@0.34.0)
+      '@vitest/ui': 5.0.0(vitest@0.34.0)
       '@vitest/utils': 0.34.0
       acorn: 8.10.0
       acorn-walk: 8.2.0
